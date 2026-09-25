@@ -13,7 +13,7 @@ FOTOS = {
     'entradas': ('empanadas-pescado.jpg', 'Empanadas y filet de merluza a la romana'),
     'alta-cocina': ('carne-papas.jpg', 'Carne braseada con papas y vegetales'),
     'pescados': ('paella.jpg', 'Paella con langostinos, calamares y mejillones'),
-    'pastas': ('sorrentinos-brocoli.jpg', 'Sorrentinos con brócoli y tomates cherry'),
+    'pastas': ('tallarines.jpg', 'Tallarines caseros con salsa de tomate'),
     'lena': ('parrilla-achuras.jpg', 'Chorizos y achuras sobre la parrilla'),
     'vinos': ('vinos-pared.jpg', 'La pared de vinos del salón'),
 }

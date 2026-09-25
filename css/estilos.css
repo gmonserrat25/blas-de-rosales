@@ -127,7 +127,7 @@ p { margin: 0 0 1em; }
 .con-portada .cabecera:not(.is-solida) { background: transparent; color: var(--tinta); }
 .con-portada .cabecera:not(.is-solida) .marca { opacity: 0; pointer-events: none; }
 .con-portada .cabecera:not(.is-solida) .btn--cabecera { background: transparent; border-color: var(--tinta); color: var(--tinta); }
-.con-portada .cabecera:not(.is-solida) .btn--cabecera:hover { background: var(--tinta); color: var(--crema); }
+.con-portada .cabecera:not(.is-solida) .btn--cabecera { visibility: hidden; }
 
 .cabecera__menu {
   display: none;
@@ -242,21 +242,22 @@ p { margin: 0 0 1em; }
 
 /* La pared real, justo debajo */
 .pared { margin: 0; }
-.pared img { width: 100%; height: min(70vh, 640px); object-fit: cover; object-position: 70% center; }
+.pared img { width: 100%; height: min(70vh, 640px); object-fit: cover; object-position: 70% 0; }
 
 /* ---------- Secciones ---------- */
 .seccion { padding: clamp(4.5rem, 9vw, 7rem) 0; position: relative; }
 .seccion--crema { background: var(--crema); }
 .seccion__cabeza { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 4rem; align-items: end; margin-bottom: 2.5rem; }
 .seccion__cabeza .titulo { margin: 0; }
-.seccion__cabeza p { margin: 0; color: var(--gris); max-width: 46ch; }
+.seccion__cabeza p { margin: 0; color: var(--texto); max-width: 46ch; }
 
 /* Bienvenida */
+.bienvenida { background: var(--crema); }
 .bienvenida__grilla { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem 4rem; align-items: start; }
 .entrada { font-size: 1.3rem; line-height: 1.5; color: var(--tinta); }
 
 /* Categorías */
-.categorias { padding-bottom: clamp(4.5rem, 9vw, 7rem); }
+.categorias { padding: clamp(4.5rem, 9vw, 7rem) 0; }
 .categorias__grilla { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .categoria {
   position: relative;
@@ -300,7 +301,14 @@ p { margin: 0 0 1em; }
 .tres-fotos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .tres-fotos figure { margin: 0; }
 .tres-fotos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radio); }
-.tres-fotos--apaisadas img { aspect-ratio: 4 / 3; }
+/* El lugar: grilla asimétrica, el deck grande y dos apiladas */
+.lugar__grilla { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 1.25rem; }
+.lugar__grilla figure { margin: 0; display: flex; flex-direction: column; }
+.lugar__grilla figure:first-child { grid-row: span 2; }
+.lugar__grilla img { width: 100%; flex: 1; min-height: 0; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radio); }
+.lugar__grilla figure:first-child img { aspect-ratio: auto; height: 100%; }
+.lugar__grilla figcaption { margin-top: .7rem; font-size: 1rem; color: var(--tinta); }
+.lugar__salon { object-position: 60% 20%; }
 .tres-fotos figcaption { margin-top: .7rem; font-size: 1rem; color: var(--tinta); }
 
 /* Reservas */
@@ -468,6 +476,9 @@ p { margin: 0 0 1em; }
   .seccion__cabeza, .bienvenida__grilla, .especialidad__grilla { grid-template-columns: 1fr; }
   .categorias__grilla { grid-template-columns: 1fr; }
   .categoria { aspect-ratio: 16 / 9; }
+  .lugar__grilla { grid-template-columns: 1fr 1fr; }
+  .lugar__grilla figure:first-child { grid-row: auto; grid-column: 1 / -1; }
+  .lugar__grilla figure:first-child img { aspect-ratio: 16 / 10; height: auto; }
   .tres-fotos { grid-template-columns: 1fr 1fr; }
   .tres-fotos figure:first-child { grid-column: 1 / -1; }
   .tres-fotos figure:first-child img { aspect-ratio: 16 / 10; }
