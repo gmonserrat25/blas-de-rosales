@@ -265,17 +265,30 @@ p { margin: 0 0 1em; }
 .reservas h2 { color: #fff; font-size: clamp(2rem, 3.2vw, 2.75rem); margin-bottom: .6rem; }
 .reservas__encabezado p { color: #fbe3df; margin: 0; max-width: 36ch; }
 .reserva { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: .75rem; align-items: end; }
-.campo { display: grid; gap: .35rem; }
+.campo { display: grid; gap: .35rem; min-width: 0; }
 .campo span { font-size: .8rem; font-family: var(--f-titulos); letter-spacing: .08em; text-transform: uppercase; color: #fbe3df; }
 .campo input, .campo select {
+  display: block;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 3rem;
+  margin: 0;
   padding: .6rem .8rem;
   border: 0;
   border-radius: var(--radio);
   background: #fff;
   color: var(--tinta);
   font: 1rem var(--f-texto);
+  line-height: 1.8rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+/* Safari en iPhone le da ancho propio al campo de fecha: se anula para que no pise al de al lado */
+.campo input[type="date"]::-webkit-date-and-time-value { text-align: left; margin: 0; }
+.campo select {
+  padding-right: 2.2rem;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231c1819' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right .9rem center;
 }
 .reservas :focus-visible { outline-color: #fff; }
 .reserva__aviso { grid-column: 1 / -1; margin: 0; min-height: 1.4em; font-size: .95rem; }
@@ -402,7 +415,7 @@ p { margin: 0 0 1em; }
 @media (max-width: 960px) {
   .reservas__fila { grid-template-columns: 1fr; }
   .reserva { grid-template-columns: 1fr 1fr; }
-  .reserva .btn { grid-column: 1 / -1; }
+  .reserva .campo:first-child, .reserva .btn { grid-column: 1 / -1; }
   .pie__grilla { grid-template-columns: 1fr 1fr; }
   .contacto__grilla { grid-template-columns: 1fr; }
 }
@@ -431,7 +444,7 @@ p { margin: 0 0 1em; }
   .pie__grilla { grid-template-columns: 1fr; }
   .carta__foto img { aspect-ratio: 16 / 7; }
 }
-@media (max-width: 420px) {
+@media (max-width: 340px) {
   .reserva { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
