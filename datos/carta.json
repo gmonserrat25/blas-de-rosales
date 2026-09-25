@@ -1,0 +1,1081 @@
+{
+ "secciones": [
+  {
+   "id": "entradas",
+   "titulo": "Entradas",
+   "grupos": [
+    {
+     "titulo": "Calientes y frías",
+     "platos": [
+      {
+       "nombre": "Bastoncitos de queso rebozados",
+       "recomendado": true
+      },
+      {
+       "nombre": "Omelette",
+       "descripcion": "Solo queso | Jamón y queso | Champignones y queso"
+      },
+      {
+       "nombre": "Empanadas criollas"
+      },
+      {
+       "nombre": "Gambas al ajillo"
+      },
+      {
+       "nombre": "Provoleta Blas de Rosales",
+       "descripcion": "Queso provolone, panceta y morrones"
+      },
+      {
+       "nombre": "Flatbread",
+       "descripcion": "Pan chato saborizado, guarnecido con jamón crudo y vegetales",
+       "recomendado": true
+      },
+      {
+       "nombre": "Jamón crudo, palmitos y salsa golf"
+      },
+      {
+       "nombre": "Rabas",
+       "descripcion": "Con papas fritas"
+      },
+      {
+       "nombre": "Langostinos apanados"
+      },
+      {
+       "nombre": "Fish & Chips",
+       "descripcion": "Piezas de mar rebozadas con papas fritas",
+       "recomendado": true
+      },
+      {
+       "nombre": "Tortilla para uno",
+       "descripcion": "Papas | Espinaca | Brócoli"
+      },
+      {
+       "nombre": "Revuelto Gramajo"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ensaladas",
+   "titulo": "Ensaladas y guarniciones",
+   "grupos": [
+    {
+     "titulo": "Armala a tu gusto",
+     "nota": "Elegí hasta 4 ingredientes",
+     "texto": "Tomate · Cebolla · Apio · Lechuga · Papa · Achicoria · Zanahoria · Rúcula · Remolacha",
+     "extra": "Adicionales con cargo: huevo duro, queso, atún, palmitos, tomates secos, champignon y palta."
+    },
+    {
+     "titulo": "Ensaladas especiales",
+     "platos": [
+      {
+       "nombre": "Rúcula, parmesano y cherry"
+      },
+      {
+       "nombre": "Cantábrica",
+       "descripcion": "Hojas verdes, tomates cherry, croutons, dados de queso y tiras de pollo",
+       "recomendado": true
+      },
+      {
+       "nombre": "Tibia de vegetales",
+       "descripcion": "Grillados",
+       "recomendado": true
+      },
+      {
+       "nombre": "Hojas verdes, apio roquefort y crutones"
+      },
+      {
+       "nombre": "Salmón, hojas verdes, alcaparras y cherry",
+       "nota": "Sujeto a disponibilidad"
+      },
+      {
+       "nombre": "Papas perejil y morrones asados"
+      },
+      {
+       "nombre": "Crostinis",
+       "descripcion": "Tostaditas con ajo, lechuga, tomate y huevo duro"
+      },
+      {
+       "nombre": "Ensalada del mar",
+       "descripcion": "Rúcula, palmitos, kanikama y tomate"
+      }
+     ]
+    },
+    {
+     "titulo": "Acompañamientos",
+     "platos": [
+      {
+       "nombre": "Papas fritas",
+       "descripcion": "Bastón | Española | Rejillas"
+      },
+      {
+       "nombre": "Papas fritas con huevos revueltos"
+      },
+      {
+       "nombre": "Papas al natural"
+      },
+      {
+       "nombre": "Papas a la crema"
+      },
+      {
+       "nombre": "Papas especiales",
+       "descripcion": "Noisette | Bravas | Provenzal"
+      },
+      {
+       "nombre": "Puré",
+       "descripcion": "Papas | Calabaza | Mixto"
+      },
+      {
+       "nombre": "Puré rústico",
+       "descripcion": "Panceta y verdeo"
+      },
+      {
+       "nombre": "Puré de manzanas"
+      },
+      {
+       "nombre": "Timbal de arroz",
+       "descripcion": "Arroz, verdeo y crema"
+      },
+      {
+       "nombre": "Espinacas a la crema"
+      },
+      {
+       "nombre": "Calabacines grillados",
+       "descripcion": "Con manteca y azúcar negra"
+      },
+      {
+       "nombre": "Tomate a la italiana",
+       "descripcion": "Grillados, gratinados con reggianito"
+      },
+      {
+       "nombre": "Papas rellenas Ros",
+       "descripcion": "Con miel y ajo"
+      },
+      {
+       "nombre": "Papas Blas",
+       "descripcion": "Rellenas con manteca, queso, panceta tostada y cebollines",
+       "recomendado": true
+      },
+      {
+       "nombre": "Huevos fritos"
+      },
+      {
+       "nombre": "Mézclum",
+       "descripcion": "De vegetales, naranja y miel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alta-cocina",
+   "titulo": "Alta cocina",
+   "grupos": [
+    {
+     "titulo": "Carnes, cerdo y pollo",
+     "platos": [
+      {
+       "nombre": "Bife de chorizo al chimichurri",
+       "descripcion": "Con papas bastón",
+       "recomendado": true
+      },
+      {
+       "nombre": "Colita de cuadril marinada",
+       "descripcion": "Acompañada con vegetales",
+       "nota": "Para 2 personas"
+      },
+      {
+       "nombre": "Entrecôte a la francesa",
+       "descripcion": "Crema amostazada al Chardonnay y hongos en guarnición de papas gratinadas"
+      },
+      {
+       "nombre": "Entrecôte bacon",
+       "descripcion": "Con papas gratinadas",
+       "recomendado": true
+      },
+      {
+       "nombre": "Lomo a la pimienta",
+       "descripcion": "Con papas a la crema"
+      },
+      {
+       "nombre": "Lomo al champignon",
+       "descripcion": "Con papas noisette"
+      },
+      {
+       "nombre": "Lomo al roquefort",
+       "descripcion": "Con papas rústicas"
+      },
+      {
+       "nombre": "Lomo en Malbec y frutos rojos",
+       "recomendado": true
+      },
+      {
+       "nombre": "Lomo lardeado",
+       "descripcion": "Con papas a la criolla"
+      },
+      {
+       "nombre": "Lomo Ros",
+       "descripcion": "Al provolone, con hojas verdes en guarnición de papas rellenas de ajo y miel",
+       "recomendado": true
+      },
+      {
+       "nombre": "Lomo strogonoff",
+       "descripcion": "Con papas a la crema"
+      },
+      {
+       "nombre": "Mollejitas",
+       "descripcion": "A la crema"
+      },
+      {
+       "nombre": "Mollejitas al champagne",
+       "descripcion": "Con papas o arroz cremoso"
+      },
+      {
+       "nombre": "Pollo al curry",
+       "descripcion": "Con arroz salteado",
+       "recomendado": true
+      },
+      {
+       "nombre": "Pollo deshuesado a la naranja",
+       "descripcion": "Con papas al natural"
+      },
+      {
+       "nombre": "Pollo deshuesado al ajillo",
+       "descripcion": "Con papas a la gallega"
+      },
+      {
+       "nombre": "Pollo deshuesado al champignon",
+       "descripcion": "Con papas españolas"
+      },
+      {
+       "nombre": "Pollo mediterráneo",
+       "descripcion": "Cherry, panceta, queso y champignones con papas gajo",
+       "recomendado": true
+      },
+      {
+       "nombre": "Cerdo a la mostaza",
+       "descripcion": "Con papas noisette"
+      },
+      {
+       "nombre": "Cerdo agridulce",
+       "descripcion": "Con mézclum de naranja a la miel"
+      },
+      {
+       "nombre": "Cerdo laqueado",
+       "descripcion": "Con puré de manzanas"
+      },
+      {
+       "nombre": "Costillitas de cerdo al whisky",
+       "descripcion": "Con timbal de arroz",
+       "recomendado": true
+      }
+     ]
+    },
+    {
+     "titulo": "Especialidades",
+     "platos": [
+      {
+       "nombre": "Chivito braseado con papas rústicas",
+       "descripcion": "Paleta de chivito braseado, vegetales",
+       "recomendado": true
+      },
+      {
+       "nombre": "Cordero al Oporto",
+       "descripcion": "Con higos y papas en gajo",
+       "recomendado": true
+      }
+     ],
+     "nota": "Sujeto a disponibilidad"
+    }
+   ]
+  },
+  {
+   "id": "pescados",
+   "titulo": "Pescados y mariscos",
+   "grupos": [
+    {
+     "titulo": "",
+     "platos": [
+      {
+       "nombre": "Cazuela de mariscos"
+      },
+      {
+       "nombre": "Filet de merluza a las finas hierbas"
+      },
+      {
+       "nombre": "Merluza a la romana",
+       "descripcion": "Con puré"
+      },
+      {
+       "nombre": "Merluza a las finas hierbas",
+       "descripcion": "Con papas noisette"
+      },
+      {
+       "nombre": "Papillot de merluza",
+       "descripcion": "Cocción en paquete con roquefort y vegetales"
+      },
+      {
+       "nombre": "Papillot de surubí",
+       "descripcion": "Cocción en paquete con roquefort y vegetales"
+      },
+      {
+       "nombre": "Ranas a la provenzal",
+       "descripcion": "Con papas fritas"
+      },
+      {
+       "nombre": "Roulade de merluza y espinaca",
+       "descripcion": "Con vegetales",
+       "recomendado": true
+      },
+      {
+       "nombre": "Salmón rosado Blas",
+       "descripcion": "Grillado en guarnición de arroz salteado con verduras al wok",
+       "recomendado": true
+      },
+      {
+       "nombre": "Salmón rosado grillado",
+       "descripcion": "Con papas gratinadass"
+      },
+      {
+       "nombre": "Sopa de pescado",
+       "descripcion": "Pescado, fumet y vegetales",
+       "recomendado": true
+      },
+      {
+       "nombre": "Trucha a la pimienta",
+       "descripcion": "Con papas gratinadass"
+      }
+     ]
+    }
+   ],
+   "aclaracion": "Todos los lomos pueden cambiarse a entrecôte. Todas las carnes, pollos y pescados pueden ser simplemente grillados o a la leña."
+  },
+  {
+   "id": "pastas",
+   "titulo": "Pastas y risottos",
+   "nota": "Artesanales, de nuestros chefs",
+   "grupos": [
+    {
+     "titulo": "Pastas",
+     "platos": [
+      {
+       "nombre": "Crepes de mariscos",
+       "descripcion": "En salsa rosa",
+       "recomendado": true
+      },
+      {
+       "nombre": "Crepes de pollo",
+       "descripcion": "Champignon y verdeo"
+      },
+      {
+       "nombre": "Ñoquis de papa"
+      },
+      {
+       "nombre": "Panzotis",
+       "descripcion": "Rellenos de espinaca y seso"
+      },
+      {
+       "nombre": "Sorrentinos",
+       "descripcion": "De espinacas y 4 quesos"
+      },
+      {
+       "nombre": "Sorrentinos",
+       "recomendado": true,
+       "descripcion": "De calabaza y queso"
+      },
+      {
+       "nombre": "Sorrentinos",
+       "descripcion": "De jamón y queso"
+      },
+      {
+       "nombre": "Sorrentinos",
+       "descripcion": "De salmón"
+      },
+      {
+       "nombre": "Sorrentinos",
+       "descripcion": "De ricotta y nuez"
+      },
+      {
+       "nombre": "Tallarines",
+       "descripcion": "Al huevo"
+      },
+      {
+       "nombre": "Tallarines de remolacha",
+       "descripcion": "Salsa recomendada: crema, jamón crudo y verdeo",
+       "recomendado": true
+      },
+      {
+       "nombre": "Tallarines Di Mare",
+       "descripcion": "Frutos del mar a la crema o salsa de tomate"
+      }
+     ]
+    },
+    {
+     "titulo": "Salsas",
+     "platos": [
+      {
+       "nombre": "Blas",
+       "descripcion": "Panceta, ciboulette, crema y almendras"
+      },
+      {
+       "nombre": "Boloñesa"
+      },
+      {
+       "nombre": "Roquefort, 4 quesos, pesto y crema de verdeo"
+      },
+      {
+       "nombre": "Crema, rúcula y cherry"
+      },
+      {
+       "nombre": "Brócoli",
+       "descripcion": "Crema y ajo"
+      },
+      {
+       "nombre": "Reducción de Malbec",
+       "descripcion": "Con hongos"
+      },
+      {
+       "nombre": "Scarparo",
+       "descripcion": "Jamón, fondue de tomate, panceta, crema, verdeo y albahaca"
+      },
+      {
+       "nombre": "Carbonara"
+      },
+      {
+       "nombre": "Ragout",
+       "descripcion": "Carne vacuna"
+      },
+      {
+       "nombre": "Champignon"
+      },
+      {
+       "nombre": "Di Mare",
+       "descripcion": "Frutos del mar a la crema o salsa de tomate",
+       "recomendado": true
+      }
+     ]
+    },
+    {
+     "titulo": "Risottos",
+     "platos": [
+      {
+       "nombre": "Risotto con camarones",
+       "descripcion": "Arroz, vegetales, camarones y crema"
+      },
+      {
+       "nombre": "Risotto de hongos"
+      },
+      {
+       "nombre": "Risotto de vegetales"
+      },
+      {
+       "nombre": "Risotto \"Tony\"",
+       "descripcion": "Arroz, camarones, hongos y crema",
+       "recomendado": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "minutas",
+   "titulo": "Minutas",
+   "nota": "Con papas fritas o ensalada mixta",
+   "grupos": [
+    {
+     "titulo": "",
+     "platos": [
+      {
+       "nombre": "Milanesa de ternera"
+      },
+      {
+       "nombre": "Milanesa napolitana"
+      },
+      {
+       "nombre": "Milanesa al roquefort"
+      },
+      {
+       "nombre": "Milanesa al provolone"
+      },
+      {
+       "nombre": "Suprema de pollo"
+      },
+      {
+       "nombre": "Suprema napolitana"
+      },
+      {
+       "nombre": "Suprema al roquefort"
+      },
+      {
+       "nombre": "Suprema al provolone"
+      },
+      {
+       "nombre": "Milanesa de merluza"
+      },
+      {
+       "nombre": "Milanesa de surubí"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lena",
+   "titulo": "A la leña",
+   "grupos": [
+    {
+     "titulo": "Carnes asadas a la leña",
+     "platos": [
+      {
+       "nombre": "Cabrito serrano",
+       "descripcion": "Con empanada y papas fritas o ensalada mixta",
+       "recomendado": true,
+       "destacado": true
+      },
+      {
+       "nombre": "Entraña"
+      },
+      {
+       "nombre": "Bifecito de lomo",
+       "descripcion": "Plancha o leña"
+      },
+      {
+       "nombre": "Entrecôte",
+       "descripcion": "Plancha o leña"
+      },
+      {
+       "nombre": "Bife de chorizo",
+       "descripcion": "Plancha o leña"
+      },
+      {
+       "nombre": "Tira de asado"
+      },
+      {
+       "nombre": "Vacío"
+      },
+      {
+       "nombre": "Costillas de cerdo"
+      },
+      {
+       "nombre": "Matambre de cerdo",
+       "descripcion": "Al limón | Al roquefort"
+      },
+      {
+       "nombre": "Churrasquito de cerdo",
+       "descripcion": "Plancha o leña"
+      }
+     ]
+    },
+    {
+     "titulo": "Achuras",
+     "platos": [
+      {
+       "nombre": "Tabla de achuras",
+       "descripcion": "Chorizo, morcilla, salchicha, chinchulín y mollejas"
+      },
+      {
+       "nombre": "Molleja"
+      },
+      {
+       "nombre": "Chinchulín"
+      },
+      {
+       "nombre": "Salchicha parrillera"
+      },
+      {
+       "nombre": "Chorizo o morcilla"
+      }
+     ]
+    },
+    {
+     "titulo": "Parrillada completa",
+     "platos": [
+      {
+       "nombre": "Parrillada Blas de Rosales",
+       "descripcion": "Empanada criolla, provoleta, chorizo, morcilla, salchicha, chinchulín, molleja, costilla de cerdo, costilla, vacío, chivito; papas fritas con huevo revuelto y ensalada mixta",
+       "recomendado": true,
+       "nota": "Para 2 personas",
+       "destacado": true
+      },
+      {
+       "nombre": "Parrillada clásica para dos",
+       "descripcion": "Chorizo, morcilla, chinchulín, costilla, vacío, costilla de cerdo"
+      },
+      {
+       "nombre": "Parrillada clásica para uno",
+       "descripcion": "Chorizo, morcilla, chinchulín, costilla, vacío, costilla de cerdo"
+      },
+      {
+       "nombre": "Parrillada de vegetales"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "postres",
+   "titulo": "Postres y café",
+   "grupos": [
+    {
+     "titulo": "Postres",
+     "platos": [
+      {
+       "nombre": "Panqueque",
+       "descripcion": "Crema chantilly, dulce de leche y nueces"
+      },
+      {
+       "nombre": "Panqueque",
+       "descripcion": "Helado, frutos rojos y crema chantilly"
+      },
+      {
+       "nombre": "Panqueque",
+       "descripcion": "Helado, dulce de leche y salsa de chocolate"
+      },
+      {
+       "nombre": "Panqueque",
+       "descripcion": "Dulce de leche con baño de chocolate"
+      },
+      {
+       "nombre": "Panqueque",
+       "descripcion": "Dulce de leche y crema"
+      },
+      {
+       "nombre": "Tiramisú"
+      },
+      {
+       "nombre": "Crème brûlée"
+      },
+      {
+       "nombre": "Brownie con helado"
+      },
+      {
+       "nombre": "Frutas en almíbar",
+       "descripcion": "Con crema o queso Tybo o cremoso"
+      },
+      {
+       "nombre": "Crepe",
+       "descripcion": "De dulce de leche flambeado"
+      },
+      {
+       "nombre": "Batata o membrillo",
+       "descripcion": "Con queso Tybo o fresco"
+      },
+      {
+       "nombre": "Copa tentación",
+       "descripcion": "Helado de vainilla, Irish Cream, Marroc y crema chantilly",
+       "recomendado": true
+      },
+      {
+       "nombre": "Copa Blas de Rosales",
+       "descripcion": "Helado, Irish Cream, almendras y crema chantilly",
+       "recomendado": true
+      },
+      {
+       "nombre": "Helado",
+       "descripcion": "1 bocha | 2 bochas | 3 bochas"
+      },
+      {
+       "nombre": "Tortilla de manzana",
+       "descripcion": "Panqueque con manzana flambeada al rhum"
+      },
+      {
+       "nombre": "Flan casero",
+       "descripcion": "Con caramelo, crema y dulce de leche"
+      },
+      {
+       "nombre": "Don Pedro",
+       "descripcion": "Helado, whisky, nueces y crema chantilly"
+      },
+      {
+       "nombre": "Copa chocolate",
+       "descripcion": "Helado de chocolate, licor de chocolate y chantilly"
+      },
+      {
+       "nombre": "Copa Figs & Cream",
+       "descripcion": "Crema americana, higos, crema chantilly, chocolate y nueces"
+      },
+      {
+       "nombre": "Lemon Ice",
+       "descripcion": "Helado de limón con champagne"
+      },
+      {
+       "nombre": "Bombón escocés, suizo o almendrado"
+      },
+      {
+       "nombre": "Copa de Nutella y Oreo"
+      },
+      {
+       "nombre": "Mixtura de frutas",
+       "descripcion": "Sola o con helado"
+      }
+     ]
+    },
+    {
+     "titulo": "Cafetería",
+     "platos": [
+      {
+       "nombre": "Café o cortado pocillo"
+      },
+      {
+       "nombre": "Café o cortado jarrito"
+      },
+      {
+       "nombre": "Té clásico, hierbas y saborizados"
+      },
+      {
+       "nombre": "Tés Inti Zen"
+      },
+      {
+       "nombre": "Café Blas de Rosales",
+       "descripcion": "Leche condensada, café, coñac, canela, chocolate"
+      },
+      {
+       "nombre": "Cappuccino | Irlandés | Caribeño | Francés"
+      }
+     ],
+     "nota": "Adicional crema"
+    }
+   ]
+  },
+  {
+   "id": "vinos",
+   "titulo": "Vinos",
+   "grupos": [
+    {
+     "titulo": "Alta gama, de autor y recomendados",
+     "vinos": [
+      {
+       "bodega": "Finca La Linda",
+       "linea": "",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon"
+       ]
+      },
+      {
+       "bodega": "Finca Las Perdices",
+       "linea": "",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Malbec por copa"
+       ]
+      },
+      {
+       "bodega": "Salentein",
+       "linea": "El Potrillo",
+       "varietales": [
+        "Malbec",
+        "Pinot Noir",
+        "Dulce Natural"
+       ]
+      },
+      {
+       "bodega": "Salentein",
+       "linea": "Killka",
+       "varietales": [
+        "Red Blend"
+       ]
+      },
+      {
+       "bodega": "Salentein",
+       "linea": "Callia",
+       "varietales": [
+        "Malbec",
+        "Chardonnay"
+       ]
+      },
+      {
+       "bodega": "Salentein",
+       "linea": "Salentein Reserve",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon"
+       ]
+      },
+      {
+       "bodega": "Catena Zapata",
+       "linea": "Saint Felicien",
+       "varietales": [
+        "Malbec",
+        "Cabernet Franc"
+       ]
+      },
+      {
+       "bodega": "Catena Zapata",
+       "linea": "D.V. Catena",
+       "varietales": [
+        "Malbec-Malbec",
+        "Cabernet-Malbec"
+       ]
+      },
+      {
+       "bodega": "Catena Zapata",
+       "linea": "Nicasia Vineyards",
+       "varietales": [
+        "Red Blend Malbec",
+        "Red Blend Cabernet Franc"
+       ]
+      },
+      {
+       "bodega": "Catena Zapata",
+       "linea": "Alamos",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Pinot Noir",
+        "Espumante Extra Brut / Brut Rosé"
+       ]
+      },
+      {
+       "bodega": "El Esteco",
+       "linea": "Elementos",
+       "varietales": [
+        "Malbec",
+        "Tannat",
+        "Elementos 3/8"
+       ]
+      },
+      {
+       "bodega": "El Esteco",
+       "linea": "Don David",
+       "varietales": [
+        "Malbec"
+       ]
+      },
+      {
+       "bodega": "Luigi Bosca",
+       "linea": "",
+       "varietales": [
+        "Malbec",
+        "Espumante Brut Nature"
+       ]
+      },
+      {
+       "bodega": "Rutini",
+       "linea": "Rutini",
+       "varietales": [
+        "Malbec-Malbec",
+        "Cabernet-Malbec"
+       ]
+      },
+      {
+       "bodega": "Rutini",
+       "linea": "Trumpeter",
+       "varietales": [
+        "Malbec"
+       ]
+      },
+      {
+       "bodega": "Vicentin Family Wines",
+       "linea": "Reto",
+       "varietales": [
+        "Malbec orgánico y blend"
+       ]
+      }
+     ]
+    },
+    {
+     "titulo": "Bodegas clásicas",
+     "vinos": [
+      {
+       "bodega": "Norton",
+       "linea": "",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Chardonnay",
+        "Sauvignon Blanc"
+       ]
+      },
+      {
+       "bodega": "Norton",
+       "linea": "Varietales especiales",
+       "varietales": [
+        "Mil Rosas",
+        "Cosecha Tardía (blanco o tinto)"
+       ]
+      },
+      {
+       "bodega": "La Rural",
+       "linea": "San Felipe",
+       "varietales": [
+        "Caramañola Blanco",
+        "San Felipe Caramañola Blanco 3/8",
+        "Caramañola Tinto",
+        "San Felipe Caramañola Tinto 3/8"
+       ]
+      },
+      {
+       "bodega": "Etchart",
+       "linea": "Etchart Privado",
+       "varietales": [
+        "Torrontés"
+       ]
+      },
+      {
+       "bodega": "Etchart",
+       "linea": "Cafayate",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon"
+       ]
+      },
+      {
+       "bodega": "Trapiche",
+       "linea": "Alaris",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Sauvignon Blanc"
+       ]
+      },
+      {
+       "bodega": "Chandon",
+       "linea": "",
+       "varietales": [
+        "Castel Chandon Blanco",
+        "Valmont Tinto"
+       ]
+      },
+      {
+       "bodega": "Chandon",
+       "linea": "Latitud 33°",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Sauvignon Blanc"
+       ]
+      },
+      {
+       "bodega": "Finca Las Moras",
+       "linea": "Alma Mora",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Chardonnay"
+       ]
+      },
+      {
+       "bodega": "Finca Las Moras",
+       "linea": "DADA",
+       "varietales": [
+        "Varietales"
+       ]
+      },
+      {
+       "bodega": "Nieto Senetiner",
+       "linea": "Nieto Senetiner",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon"
+       ]
+      },
+      {
+       "bodega": "Nieto Senetiner",
+       "linea": "Benjamín Nieto Senetiner",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Chardonnay"
+       ]
+      },
+      {
+       "bodega": "Santa Julia",
+       "linea": "",
+       "varietales": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Syrah",
+        "Tempranillo",
+        "Chardonnay",
+        "Sauvignon Blanc"
+       ]
+      },
+      {
+       "bodega": "Santa Julia",
+       "linea": "Especiales",
+       "varietales": [
+        "Chenin Dulce Natural",
+        "Dulce Tinto"
+       ]
+      },
+      {
+       "bodega": "Catena Zapata",
+       "linea": "Uxmal",
+       "varietales": [
+        "Red Blend Malbec",
+        "Sauvignon Blanc-Sémillon"
+       ]
+      }
+     ]
+    }
+   ],
+   "frase": "“El vino es el abrazo de las palabras, en su justa medida…”"
+  },
+  {
+   "id": "bebidas",
+   "titulo": "Otras bebidas",
+   "grupos": [
+    {
+     "titulo": "Bebidas sin alcohol",
+     "lista": [
+      "Agua mineral con o sin gas 500 cc",
+      "Gaseosas 330 cc (línea Coca-Cola)",
+      "Gaseosas lata 350 cc (línea Coca-Cola)",
+      "Saborizadas 500 cc (línea Coca-Cola)",
+      "Jugo de naranja",
+      "Jarra de limonada"
+     ]
+    },
+    {
+     "titulo": "Cervezas",
+     "lista": [
+      "Stella Artois 330 cc (rubia o negra)",
+      "Stella Artois 1000 cc",
+      "Andes 473 cc",
+      "Andes 1000 cc",
+      "Corona 750 cc",
+      "Corona 330 cc"
+     ]
+    },
+    {
+     "titulo": "Tragos",
+     "lista": [
+      "Gancia con limón",
+      "Gin tonic",
+      "Campari con naranja",
+      "Fernet con coca"
+     ]
+    },
+    {
+     "titulo": "Espirituosas",
+     "lista": [
+      "Baileys",
+      "Tía María",
+      "Reserva San Juan",
+      "Cointreau",
+      "Beefeater",
+      "Absolut",
+      "Havana Club",
+      "Whiskies importados"
+     ]
+    },
+    {
+     "titulo": "Espumantes",
+     "lista": [
+      "Luigi Bosca",
+      "Alamos",
+      "Salentein",
+      "Chandon",
+      "Baron B",
+      "Chandon 187",
+      "Las Perdices",
+      "Uxmal"
+     ]
+    }
+   ]
+  }
+ ]
+}
