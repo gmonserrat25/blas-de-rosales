@@ -8,7 +8,8 @@
   <meta property="og:title" content="Blas de Rosales · La Falda">
   <meta property="og:description" content="Carnes a la leña, pastas artesanales y boutique de vinos en Av. España 1320, La Falda.">
   <meta property="og:image" content="img/salon-marca.jpg">
-  <link rel="icon" href="img/icono.png">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="icon" href="img/icono.png" sizes="192x192">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -16,20 +17,13 @@
 </head>
 <body>
 
-  <!-- Borde irregular de pincel para botones y franjas, como en las piezas impresas -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <filter id="pincel" x="-3%" y="-15%" width="106%" height="130%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.06 0.9" numOctaves="2" seed="7" result="ruido"/>
-      <feDisplacementMap in="SourceGraphic" in2="ruido" scale="5" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-  </svg>
-
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <header class="cabecera is-solida" data-cabecera>
+  <header class="cabecera" data-cabecera>
     <div class="envoltura cabecera__fila">
       <a class="marca" href="index.html" aria-label="Blas de Rosales, inicio">
-        <img src="img/logo.png" alt="Blas de Rosales · Carnes, pastas y más" width="200" height="57">
+        <svg class="marca__rombo" aria-hidden="true"><use href="img/logo/marca.svg#rombo"/></svg>
+        <svg class="marca__nombre" aria-hidden="true"><use href="img/logo/marca.svg#nombre"/></svg>
       </a>
       <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="navegacion" data-menu>
         <span class="cabecera__menu-barras" aria-hidden="true"></span>
@@ -37,13 +31,13 @@
       </button>
       <nav id="navegacion" class="navegacion" aria-label="Secciones">
         <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="index.html#lugar">El lugar</a></li>
+          <li><a href="index.html#bienvenida">Nosotros</a></li>
           <li><a href="carta.html" aria-current="page">La carta</a></li>
           <li><a href="#vinos">Vinos</a></li>
+          <li><a href="index.html#lugar">El lugar</a></li>
           <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
-        <a class="btn btn--primario btn--chico" href="index.html#reservas">Reservar mesa</a>
+        <a class="btn btn--cabecera" href="index.html#reservas">Reservar mesa</a>
       </nav>
     </div>
   </header>
@@ -73,8 +67,11 @@
   <footer class="pie">
     <div class="envoltura pie__grilla">
       <div class="pie__marca">
-        <img src="img/logo.png" alt="Blas de Rosales" width="200" height="57" loading="lazy">
-        <p>Av. España 1320, X5172 La Falda, Córdoba.</p>
+        <a class="marca" href="index.html" aria-label="Blas de Rosales, inicio">
+          <svg class="marca__rombo" aria-hidden="true"><use href="img/logo/marca.svg#rombo"/></svg>
+          <svg class="marca__nombre" aria-hidden="true"><use href="img/logo/marca.svg#nombre"/></svg>
+        </a>
+        <p>Carnes, pastas y más. Av. España 1320, X5172 La Falda, Córdoba.</p>
       </div>
       <div>
         <h2 class="pie__titulo">Reservas y pedidos</h2>
@@ -94,15 +91,21 @@
     </div>
     <div class="envoltura pie__base">
       <ul class="pie__nav">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="index.html#lugar">El lugar</a></li>
+        <li><a href="index.html#bienvenida">Nosotros</a></li>
         <li><a href="carta.html">La carta</a></li>
         <li><a href="#vinos">Vinos</a></li>
+        <li><a href="index.html#lugar">El lugar</a></li>
         <li><a href="index.html#reservas">Reservas</a></li>
       </ul>
-      <p>© <span data-anio>2026</span> Blas de Rosales. Todos los derechos reservados.</p>
+      <p>© <span data-anio>2026</span> Blas de Rosales</p>
     </div>
   </footer>
+
+  <!-- Barra fija para celular -->
+  <div class="barra-movil is-visible" data-barra>
+    <a class="btn btn--linea-clara" href="tel:+5493548632624">Llamar</a>
+    <a class="btn btn--primario" href="https://wa.me/5493548632624?text=Hola!%20Quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+  </div>
 
   <script src="js/sitio.js" defer></script>
 </body>

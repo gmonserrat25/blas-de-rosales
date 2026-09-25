@@ -73,7 +73,7 @@ def seccion(s):
     if s.get('aclaracion'):
         h += f'<p class="carta__aclaracion">{e(s["aclaracion"])}</p>'
     if s.get('frase'):
-        h += f'<p class="carta__aclaracion">{e(s["frase"])}</p>'
+        h += f'<p class="carta__frase">{e(s["frase"])}</p>'
     return h + '</section>'
 
 

@@ -3,14 +3,24 @@
 const WHATSAPP = '5493548632624';
 const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Cabecera: transparente sobre la portada, sólida al bajar
+// Cabecera: sobre la portada va sin logo y en tinta; al salir de la portada, sólida.
 const cabecera = document.querySelector('[data-cabecera]');
-const tienePortada = document.querySelector('[data-portada]');
-function actualizarCabecera() {
-  cabecera.classList.toggle('is-solida', !tienePortada || window.scrollY > 40);
+const portada = document.querySelector('[data-portada]');
+const barra = document.querySelector('[data-barra]');
+if (portada) {
+  // Se calcula en cada scroll (barato) para que nunca quede desfasada.
+  const actualizar = () => {
+    const fuera = portada.getBoundingClientRect().bottom <= cabecera.offsetHeight;
+    cabecera.classList.toggle('is-solida', fuera);
+    if (barra) barra.classList.toggle('is-visible', fuera);
+  };
+  actualizar();
+  window.addEventListener('scroll', actualizar, { passive: true });
+  window.addEventListener('resize', actualizar);
+  window.addEventListener('pageshow', actualizar);
+} else {
+  cabecera.classList.add('is-solida');
 }
-actualizarCabecera();
-window.addEventListener('scroll', actualizarCabecera, { passive: true });
 
 // Menú en celular
 const botonMenu = document.querySelector('[data-menu]');
@@ -27,22 +37,6 @@ botonMenu.addEventListener('click', () => {
 });
 navegacion.addEventListener('click', (e) => { if (e.target.closest('a')) cerrarMenu(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarMenu(); });
-
-// Portada: fotos que se van cruzando
-if (tienePortada) {
-  const fotos = [...tienePortada.querySelectorAll('.portada__foto')];
-  const contador = tienePortada.querySelector('[data-contador]');
-  let actual = 0;
-  if (!reducirMovimiento && fotos.length > 1) {
-    setInterval(() => {
-      if (document.hidden) return;
-      fotos[actual].classList.remove('is-activa');
-      actual = (actual + 1) % fotos.length;
-      fotos[actual].classList.add('is-activa');
-      contador.textContent = String(actual + 1).padStart(2, '0');
-    }, 6500);
-  }
-}
 
 // Reserva: arma el mensaje y abre WhatsApp
 const reserva = document.querySelector('[data-reserva]');

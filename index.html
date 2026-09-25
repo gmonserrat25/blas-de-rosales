@@ -8,28 +8,22 @@
   <meta property="og:title" content="Blas de Rosales · La Falda">
   <meta property="og:description" content="Carnes a la leña, pastas artesanales y boutique de vinos en Av. España 1320, La Falda.">
   <meta property="og:image" content="img/salon-marca.jpg">
-  <link rel="icon" href="img/icono.png">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="icon" href="img/icono.png" sizes="192x192">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-
-  <!-- Borde irregular de pincel para botones y franjas, como en las piezas impresas -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <filter id="pincel" x="-3%" y="-15%" width="106%" height="130%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.06 0.9" numOctaves="2" seed="7" result="ruido"/>
-      <feDisplacementMap in="SourceGraphic" in2="ruido" scale="5" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-  </svg>
+<body class="con-portada">
 
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
   <header class="cabecera" data-cabecera>
     <div class="envoltura cabecera__fila">
       <a class="marca" href="#inicio" aria-label="Blas de Rosales, inicio">
-        <img src="img/logo.png" alt="Blas de Rosales · Carnes, pastas y más" width="200" height="57">
+        <svg class="marca__rombo" aria-hidden="true"><use href="img/logo/marca.svg#rombo"/></svg>
+        <svg class="marca__nombre" aria-hidden="true"><use href="img/logo/marca.svg#nombre"/></svg>
       </a>
       <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="navegacion" data-menu>
         <span class="cabecera__menu-barras" aria-hidden="true"></span>
@@ -37,107 +31,81 @@
       </button>
       <nav id="navegacion" class="navegacion" aria-label="Secciones">
         <ul>
-          <li><a href="#inicio" aria-current="page">Inicio</a></li>
-          <li><a href="#lugar">El lugar</a></li>
+          <li><a href="#bienvenida">Nosotros</a></li>
           <li><a href="carta.html">La carta</a></li>
           <li><a href="carta.html#vinos">Vinos</a></li>
+          <li><a href="#lugar">El lugar</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <a class="btn btn--primario btn--chico" href="#reservas">Reservar mesa</a>
+        <a class="btn btn--cabecera" href="#reservas">Reservar mesa</a>
       </nav>
     </div>
   </header>
 
   <main id="contenido">
 
-    <!-- PORTADA -->
-    <section id="inicio" class="portada" aria-label="Presentación" data-portada>
-      <div class="portada__fotos">
-        <img class="portada__foto is-activa" src="img/salon-marca.jpg" alt="Salón de Blas de Rosales, con la pared naranja y el monograma BR" fetchpriority="high">
-        <img class="portada__foto" src="img/deck-noche.jpg" alt="El deck de madera al aire libre, de noche, con mesas llenas" loading="lazy">
-        <img class="portada__foto" src="img/fachada-noche.jpg" alt="Frente del restaurante sobre avenida España, iluminado de noche" loading="lazy">
-        <img class="portada__foto" src="img/carne-lena.jpg" alt="Carne asada a la leña con chimichurri" loading="lazy">
-      </div>
+    <!-- PORTADA: la pared del salón -->
+    <section id="inicio" class="portada" aria-label="Blas de Rosales" data-portada>
       <div class="envoltura portada__contenido">
-        <p class="antetitulo">La Falda · Valle de Punilla</p>
-        <h1 class="portada__titulo">Carnes a la leña, pastas de la casa y una buena copa de vino</h1>
-        <p class="portada__bajada">Desde 2015 en avenida España. Para venir en familia, con amigos o en pareja.</p>
+        <p class="portada__antetitulo">La Falda <span>·</span> Av. España 1320 <span>·</span> Desde 2015</p>
+        <h1 class="portada__marca">
+          <svg class="portada__rombo" aria-hidden="true"><use href="img/logo/marca.svg#rombo"/></svg>
+          <svg class="portada__nombre" role="img" aria-label="Blas de Rosales"><use href="img/logo/marca.svg#nombre"/></svg>
+        </h1>
+        <p class="portada__lema">Carnes, pastas y más…</p>
         <div class="portada__acciones">
-          <a class="btn btn--primario" href="#reservas">Reservar mesa</a>
-          <a class="btn btn--linea-clara" href="carta.html">Ver la carta</a>
+          <a class="btn btn--tinta" href="#reservas">Reservar mesa</a>
+          <a class="btn btn--linea" href="carta.html">Ver la carta</a>
+          <a class="enlace enlace--tinta" href="tel:+5493548632624">03548 15-632624</a>
         </div>
       </div>
-      <div class="portada__pie envoltura">
-        <p class="portada__contador" aria-live="polite"><span data-contador>01</span> / 04</p>
-        <ul class="portada__redes">
+      <div class="envoltura portada__pie">
+        <p>Mediodía 13 a 15 h <span>·</span> Noche 21 a 23 h, de lunes a sábado</p>
+        <ul>
           <li><a href="https://www.instagram.com/blasderosales/" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://www.tripadvisor.com.ar/Restaurant_Review-g312770-d8609450-Reviews-Blas_de_Rosales-La_Falda_Province_of_Cordoba_Central_Argentina.html" target="_blank" rel="noopener">TripAdvisor</a></li>
         </ul>
       </div>
     </section>
 
-    <!-- EL LUGAR -->
-    <section id="lugar" class="seccion seccion--crema bienvenida">
+    <!-- LA PARED DE VERDAD -->
+    <figure class="pared">
+      <img src="img/salon-marca.jpg" alt="El salón, con la pared naranja y el cartel BR Blas de Rosales" width="2000" height="1000">
+    </figure>
+
+    <!-- BIENVENIDA -->
+    <section id="bienvenida" class="seccion bienvenida">
       <div class="envoltura bienvenida__grilla">
-        <figure class="bienvenida__foto">
-          <img src="img/salon-bodega.jpg" alt="El salón con la bodega de vinos al fondo y las mesas armadas" loading="lazy" width="1100" height="550">
-        </figure>
+        <h2 class="titulo">¡Bienvenidos!</h2>
         <div class="bienvenida__texto">
-          <h2 class="titulo">¡Bienvenidos!</h2>
-          <p class="entrada">Lugar gourmet, delicatessen y boutique de vinos. Un salón cálido, con la cocina a la vista y un deck de madera para las noches de verano.</p>
-          <p>Cuidamos la luz, el servicio y cada plato que sale de la cocina. En la carta vas a encontrar carnes a la leña, pastas totalmente caseras, trucha y salmón. Y la parrillada Blas de Rosales, que no te podés ir sin probar.</p>
+          <p class="entrada">Lugar gourmet, delicatessen y boutique de vinos sobre avenida España, desde 2015. Un salón cálido, con la cocina a la vista, y un deck de madera para las noches de verano.</p>
+          <p>En la carta hay carnes a la leña, pastas totalmente caseras, trucha y salmón. Y la parrillada Blas de Rosales, que no te podés ir sin probar.</p>
           <a class="enlace" href="carta.html">Mirá la carta completa</a>
         </div>
-      </div>
-
-      <div class="envoltura">
-        <ul class="virtudes">
-          <li class="virtud">
-            <svg class="virtud__icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44c-8 0-13-5.5-13-12.5 0-6 4-9.5 6.5-13.5 1 3.5 3 5.5 5 6.5-.5-6.5 2-13 7-18.5.5 6 3.5 9.5 6 13 2 3 3.5 6 3.5 10C39 38 32.5 44 24 44Z"/><path d="M24 44c-3.5 0-6-2.5-6-6 0-3.5 3-5.5 4-8.5 2 2.5 3 3.5 4.5 3.5 0 0 1.5-2 1.5-4 2.5 2.5 2 6 2 9 0 3.5-2.5 6-6 6Z"/></svg>
-            <div>
-              <h3>Carnes a la leña</h3>
-              <p>Parrilla y horno de leña. Cabrito serrano, entraña, vacío y la parrillada completa.</p>
-            </div>
-          </li>
-          <li class="virtud">
-            <svg class="virtud__icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 26h32c0 9-7 16-16 16S8 35 8 26Z"/><path d="M14 26c1-5 4-8 8-8s5 3 9 3 5-3 5-3"/><path d="M18 21c.5-3 2-5 4-6M27 20c1-4 3-6 6-7"/><path d="M6 42h36"/></svg>
-            <div>
-              <h3>Pastas artesanales</h3>
-              <p>Sorrentinos, panzotis, ñoquis y tallarines de remolacha hechos por nuestros chefs.</p>
-            </div>
-          </li>
-          <li class="virtud">
-            <svg class="virtud__icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 5h18c1 6 1.5 10 0 14.5-1.5 4.5-5 7-9 7s-7.5-2.5-9-7C13.5 15 14 11 15 5Z"/><path d="M14.5 13h19"/><path d="M24 26.5V41"/><path d="M16 43h16"/></svg>
-            <div>
-              <h3>Boutique de vinos</h3>
-              <p>Etiquetas de alta gama y de autor: Catena Zapata, Salentein, Rutini, Las Perdices y más.</p>
-            </div>
-          </li>
-        </ul>
       </div>
     </section>
 
     <!-- CATEGORÍAS DE LA CARTA -->
-    <section class="seccion categorias" aria-labelledby="titulo-categorias">
+    <section class="categorias" aria-labelledby="titulo-categorias">
       <div class="envoltura">
         <h2 id="titulo-categorias" class="solo-lectores">La carta</h2>
         <div class="categorias__grilla">
           <a class="categoria" href="carta.html#lena">
-            <img src="img/parrilla-achuras.jpg" alt="" loading="lazy">
+            <img src="img/carne-lena.jpg" alt="" loading="lazy">
             <span class="categoria__marco">
               <span class="categoria__nombre">A la leña</span>
               <span class="categoria__ver">Ver la carta</span>
             </span>
           </a>
           <a class="categoria" href="carta.html#pastas">
-            <img src="img/tallarines.jpg" alt="" loading="lazy">
+            <img src="img/sorrentinos.jpg" alt="" loading="lazy">
             <span class="categoria__marco">
               <span class="categoria__nombre">Pastas</span>
               <span class="categoria__ver">Ver la carta</span>
             </span>
           </a>
-          <a class="categoria" href="carta.html#alta-cocina">
-            <img src="img/bife-papas.jpg" alt="" loading="lazy">
+          <a class="categoria" href="carta.html#pescados">
+            <img src="img/salmon-blas.jpg" alt="" loading="lazy">
             <span class="categoria__marco">
               <span class="categoria__nombre">Alta cocina</span>
               <span class="categoria__ver">Ver la carta</span>
@@ -154,28 +122,20 @@
       </div>
     </section>
 
-    <!-- FRASE -->
-    <section class="seccion frase" aria-label="Frase de la casa">
-      <div class="envoltura frase__caja">
-        <blockquote>
-          <p>“El vino es el abrazo de las palabras, en su justa medida…”</p>
-        </blockquote>
-        <p class="frase__firma">De nuestra carta de vinos</p>
-      </div>
-    </section>
-
     <!-- ESPECIALIDAD -->
     <section class="seccion seccion--crema especialidad" aria-labelledby="titulo-especialidad">
       <div class="envoltura especialidad__grilla">
         <div class="especialidad__texto">
-          <h2 id="titulo-especialidad" class="titulo">La especialidad de la casa</h2>
-          <p class="especialidad__dato">Parrillada Blas de Rosales <span>·</span> para dos</p>
-          <p>Empanada criolla, provoleta, chorizo, morcilla, salchicha, chinchulín, molleja, costilla de cerdo, costilla, vacío y chivito. Con papas fritas con huevo revuelto y ensalada mixta.</p>
-          <p>Y si venís con tiempo, preguntá por el <strong>cabrito serrano</strong>, al horno con vegetales o a la leña.</p>
-          <a class="btn btn--primario" href="#reservas">Reservar mesa</a>
+          <p class="antetitulo">La especialidad de la casa <span>·</span> para dos</p>
+          <h2 id="titulo-especialidad" class="titulo">Parrillada Blas de Rosales</h2>
+          <ul class="especialidad__lista">
+            <li>Empanada criolla</li><li>Provoleta</li><li>Chorizo</li><li>Morcilla</li><li>Salchicha</li><li>Chinchulín</li><li>Molleja</li><li>Costilla de cerdo</li><li>Costilla</li><li>Vacío</li><li>Chivito</li>
+          </ul>
+          <p>Con papas fritas con huevo revuelto y ensalada mixta. Y si venís con tiempo, preguntá por el <strong>cabrito serrano</strong>, al horno con vegetales o a la leña.</p>
+          <a class="btn btn--linea" href="carta.html#lena">Ver la parrilla en la carta</a>
         </div>
         <figure class="especialidad__foto">
-          <img src="img/parrilla-humo.jpg" alt="Cortes de la parrillada dorándose sobre las brasas" loading="lazy" width="1080" height="696">
+          <img src="img/parrilla-achuras.jpg" alt="Chorizos, morcillas y achuras dorándose sobre las brasas" loading="lazy" width="1080" height="837">
         </figure>
       </div>
     </section>
@@ -183,48 +143,30 @@
     <!-- LA COCINA -->
     <section class="seccion cocina" aria-labelledby="titulo-cocina">
       <div class="envoltura">
-        <div class="cocina__cabeza">
-          <h2 id="titulo-cocina" class="titulo">Detrás de cada plato</h2>
-          <p>La cocina se ve desde el salón. Ahí están nuestros chefs armando cada plato, y afuera el parrillero, atento al fuego desde temprano.</p>
+        <div class="seccion__cabeza">
+          <h2 id="titulo-cocina" class="titulo">La cocina, a la vista</h2>
+          <p>La cocina se ve desde el salón. Ahí están los chefs armando cada plato, y el parrillero, atento al fuego desde temprano.</p>
         </div>
-        <div class="cocina__fotos">
-          <figure><img src="img/parrillero.jpg" alt="El parrillero acomodando las brasas bajo la parrilla" loading="lazy"><figcaption>La parrilla y el horno de leña</figcaption></figure>
+        <div class="tres-fotos">
+          <figure><img src="img/parrillero.jpg" alt="El parrillero acomodando las brasas bajo la parrilla" loading="lazy"><figcaption>El parrillero, desde temprano</figcaption></figure>
           <figure><img src="img/chef.jpg" alt="Uno de los chefs terminando un plato en la cocina" loading="lazy"><figcaption>Pastas y salsas de la casa</figcaption></figure>
-          <figure><img src="img/linea-emplatado.jpg" alt="Platos emplatados en fila listos para salir al salón" loading="lazy"><figcaption>Cada plato sale revisado</figcaption></figure>
+          <figure><img src="img/linea-emplatado.jpg" alt="Platos emplatados en fila listos para salir al salón" loading="lazy"><figcaption>El pase, antes de salir al salón</figcaption></figure>
         </div>
       </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="contacto" aria-labelledby="titulo-contacto">
-      <h2 id="titulo-contacto" class="solo-lectores">Dónde estamos</h2>
-      <div class="contacto__mapa">
-        <iframe title="Mapa: Blas de Rosales, Av. España 1320, La Falda" src="https://www.google.com/maps?q=Blas+de+Rosales,+Av.+Espa%C3%B1a+1320,+La+Falda,+C%C3%B3rdoba&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+    <!-- EL LUGAR -->
+    <section id="lugar" class="seccion seccion--crema lugar" aria-labelledby="titulo-lugar">
       <div class="envoltura">
-        <ul class="datos">
-          <li class="dato">
-            <svg class="dato__icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6c-3 1-6 4-6 7 1 13 13 26 27 28 3 0 6-3 7-6l-7-6-4 3c-5-2-9-6-11-11l3-4-6-7Z"/></svg>
-            <div>
-              <p class="dato__principal"><a href="tel:+5493548632624">03548 15-632624</a></p>
-              <p class="dato__secundario"><a href="https://wa.me/5493548632624" target="_blank" rel="noopener">Escribinos por WhatsApp</a></p>
-            </div>
-          </li>
-          <li class="dato">
-            <svg class="dato__icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44S10 29 10 19a14 14 0 0 1 28 0c0 10-14 25-14 25Z"/><circle cx="24" cy="19" r="5"/></svg>
-            <div>
-              <p class="dato__principal">Av. España 1320<br>La Falda, Córdoba</p>
-              <p class="dato__secundario"><a href="https://www.google.com/maps/dir/?api=1&destination=Blas+de+Rosales,+Av.+Espa%C3%B1a+1320,+La+Falda" target="_blank" rel="noopener">Cómo llegar</a></p>
-            </div>
-          </li>
-          <li class="dato">
-            <svg class="dato__icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l7 5"/></svg>
-            <div>
-              <p class="dato__principal">Mediodía: todos los días, 13 a 15&nbsp;h<br>Noche: lunes a sábado, 21 a 23&nbsp;h</p>
-              <p class="dato__secundario">Horarios</p>
-            </div>
-          </li>
-        </ul>
+        <div class="seccion__cabeza">
+          <h2 id="titulo-lugar" class="titulo">El lugar</h2>
+          <p>Salón con la bodega a la vista y un deck de madera al aire libre, sobre avenida España.</p>
+        </div>
+        <div class="tres-fotos tres-fotos--apaisadas">
+          <figure><img src="img/deck-noche.jpg" alt="El deck de madera al aire libre, de noche, con las mesas llenas" loading="lazy"><figcaption>El deck, para las noches de verano</figcaption></figure>
+          <figure><img src="img/salon-lleno.jpg" alt="El salón lleno un mediodía" loading="lazy"><figcaption>El salón, un domingo al mediodía</figcaption></figure>
+          <figure><img src="img/fachada-noche.jpg" alt="Frente del restaurante sobre avenida España, iluminado de noche" loading="lazy"><figcaption>Av. España 1320, así nos encontrás</figcaption></figure>
+        </div>
       </div>
     </section>
 
@@ -257,7 +199,7 @@
               <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option value="más de 8">Más de 8</option>
             </select>
           </label>
-          <button class="btn btn--oscuro" type="submit">Pedir por WhatsApp</button>
+          <button class="btn btn--tinta" type="submit">Pedir por WhatsApp</button>
           <p class="reserva__aviso" data-aviso role="status"></p>
         </form>
       </div>
@@ -266,14 +208,34 @@
       </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section class="galeria" aria-label="Fotos del restaurante">
-      <img src="img/salon-lleno.jpg" alt="El salón lleno un mediodía" loading="lazy">
-      <img src="img/empanadas.jpg" alt="Empanadas criollas recién salidas del horno" loading="lazy">
-      <img src="img/paella.jpg" alt="Paella con langostinos, calamares y mejillones" loading="lazy">
-      <img src="img/carne-papas.jpg" alt="Carne braseada con papas y vegetales" loading="lazy">
-      <img src="img/emplatado-lomo.jpg" alt="Lomo emplatado con cebolla encurtida" loading="lazy">
-      <img src="img/cava.jpg" alt="La cava de vinos del salón" loading="lazy">
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto" aria-labelledby="titulo-contacto">
+      <div class="envoltura contacto__grilla">
+        <div class="contacto__datos">
+          <h2 id="titulo-contacto" class="titulo">Dónde estamos</h2>
+          <dl class="datos">
+            <div>
+              <dt>Teléfono y WhatsApp</dt>
+              <dd><a href="tel:+5493548632624">03548 15-632624</a></dd>
+              <dd><a class="enlace" href="https://wa.me/5493548632624" target="_blank" rel="noopener">Escribinos por WhatsApp</a></dd>
+            </div>
+            <div>
+              <dt>Dirección</dt>
+              <dd>Av. España 1320, La Falda, Córdoba</dd>
+              <dd><a class="enlace" href="https://www.google.com/maps/dir/?api=1&amp;destination=Blas+de+Rosales,+Av.+Espa%C3%B1a+1320,+La+Falda" target="_blank" rel="noopener">Cómo llegar</a></dd>
+            </div>
+            <div>
+              <dt>Horarios</dt>
+              <dd>Mediodía: todos los días, de 13 a 15 h</dd>
+              <dd>Noche: de lunes a sábado, de 21 a 23 h</dd>
+              <dd class="datos__nota">Domingo a la noche, cerrado</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="contacto__mapa">
+          <iframe title="Mapa: Blas de Rosales, Av. España 1320, La Falda" src="https://www.google.com/maps?q=Blas+de+Rosales,+Av.+Espa%C3%B1a+1320,+La+Falda,+C%C3%B3rdoba&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -281,8 +243,11 @@
   <footer class="pie">
     <div class="envoltura pie__grilla">
       <div class="pie__marca">
-        <img src="img/logo.png" alt="Blas de Rosales" width="200" height="57" loading="lazy">
-        <p>Av. España 1320, X5172 La Falda, Córdoba.</p>
+        <a class="marca" href="#inicio" aria-label="Blas de Rosales, inicio">
+          <svg class="marca__rombo" aria-hidden="true"><use href="img/logo/marca.svg#rombo"/></svg>
+          <svg class="marca__nombre" aria-hidden="true"><use href="img/logo/marca.svg#nombre"/></svg>
+        </a>
+        <p>Carnes, pastas y más. Av. España 1320, X5172 La Falda, Córdoba.</p>
       </div>
       <div>
         <h2 class="pie__titulo">Reservas y pedidos</h2>
@@ -302,15 +267,21 @@
     </div>
     <div class="envoltura pie__base">
       <ul class="pie__nav">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#lugar">El lugar</a></li>
+        <li><a href="#bienvenida">Nosotros</a></li>
         <li><a href="carta.html">La carta</a></li>
         <li><a href="carta.html#vinos">Vinos</a></li>
+        <li><a href="#lugar">El lugar</a></li>
         <li><a href="#reservas">Reservas</a></li>
       </ul>
-      <p>© <span data-anio>2026</span> Blas de Rosales. Todos los derechos reservados.</p>
+      <p>© <span data-anio>2026</span> Blas de Rosales</p>
     </div>
   </footer>
+
+  <!-- Barra fija para celular -->
+  <div class="barra-movil" data-barra>
+    <a class="btn btn--linea-clara" href="tel:+5493548632624">Llamar</a>
+    <a class="btn btn--primario" href="https://wa.me/5493548632624?text=Hola!%20Quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+  </div>
 
   <script src="js/sitio.js" defer></script>
 </body>
