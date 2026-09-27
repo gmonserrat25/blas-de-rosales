@@ -25,7 +25,7 @@ function elegir(pestana, { enfocar = false, subir = false } = {}) {
   // Si se cambia de pestaña con la lista ya pegada arriba, volver al principio de la carta
   if (subir && lista.getBoundingClientRect().top <= nav.offsetHeight + 1) {
     const cuerpo = lista.nextElementSibling;
-    window.scrollTo({ top: cuerpo.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - lista.offsetHeight });
+    window.scrollTo({ top: cuerpo.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - lista.offsetHeight - 24 });
   }
 }
 

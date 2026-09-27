@@ -58,8 +58,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .btn--rojo:active { background: #8C1F1B; }
 .btn--linea-clara { border-color: rgba(239, 232, 220, .55); color: var(--hueso); }
 .btn--linea-clara:hover { background: rgba(239, 232, 220, .14); border-color: var(--hueso); }
-.btn--tinta { background: var(--tinta); color: var(--piedra); padding: .62rem 1.15rem; font-size: .72rem; }
-.btn--tinta:hover { background: var(--rojo); color: #FFF8F2; }
+.btn--chico { padding: .62rem 1.15rem; font-size: .72rem; }
 
 .enlace { text-decoration: none; border-bottom: 1px solid var(--regla); padding-bottom: .1rem; }
 .enlace:hover { border-bottom-color: var(--rojo); color: var(--rojo); }
@@ -92,7 +91,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .nav__marca .nombre { width: 108px; }
   .nav__enlaces { gap: .9rem; }
   .nav__enlaces a:not(.btn) { font-size: .66rem; letter-spacing: .12em; }
-  .nav__enlaces .btn { padding: .55rem .9rem; font-size: .64rem; letter-spacing: .12em; }
+  .nav__enlaces .btn--chico { padding: .55rem .9rem; font-size: .64rem; letter-spacing: .12em; }
 }
 @media (max-width: 360px) { .nav__enlaces a[href="#carta"] { display: none; } }
 
@@ -101,7 +100,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .hero__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; }
 .hero__velo {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(18, 14, 10, .82) 0%, rgba(18, 14, 10, .5) 34%, rgba(18, 14, 10, .08) 64%, rgba(18, 14, 10, 0) 100%);
+  background: linear-gradient(to top, rgba(18, 14, 10, .85) 0%, rgba(18, 14, 10, .6) 34%, rgba(18, 14, 10, .25) 64%, rgba(18, 14, 10, 0) 100%);
 }
 .hero__contenido { position: relative; width: 100%; padding-block: clamp(2.4rem, 6vw, 4.2rem); color: var(--hueso); }
 .hero__volanta {
@@ -111,7 +110,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .hero__marca { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.3rem); color: #F6F0E6; margin-bottom: 1.5rem; }
 .hero__marca .rombo { width: clamp(52px, 7vw, 84px); }
 .hero__marca .nombre { width: min(440px, 62vw); }
-.hero__frase { font-family: var(--f-titulos); font-weight: 200; font-size: clamp(1.45rem, 3.4vw, 2.4rem); line-height: 1.22; max-width: 20ch; color: #F7F2EA; }
+.hero__frase { font-family: var(--f-titulos); font-weight: 300; font-size: clamp(1.45rem, 3.4vw, 2.4rem); line-height: 1.22; max-width: 20ch; color: #F7F2EA; }
 .hero__frase em { font-style: normal; font-weight: 400; }
 .hero__acciones { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.9rem; }
 @media (max-width: 520px) {
@@ -124,7 +123,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .datos__fila { display: grid; grid-template-columns: repeat(3, 1fr); margin-block: 0; }
 .dato { padding: 1.35rem 1.5rem 1.4rem 0; }
 .dato + .dato { border-left: 1px solid var(--regla); padding-left: 1.5rem; }
-.dato dt { font-family: var(--f-titulos); font-size: .63rem; letter-spacing: .24em; text-transform: uppercase; color: var(--tinta-2); margin-bottom: .4rem; }
+.dato dt { font-family: var(--f-titulos); font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--tinta-2); margin-bottom: .4rem; }
 .dato dd { margin: 0; font-size: .95rem; line-height: 1.5; }
 .dato dd a { text-decoration: none; border-bottom: 1px solid var(--regla); }
 .dato dd a:hover { border-bottom-color: var(--rojo); color: var(--rojo); }
@@ -193,7 +192,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .plato__cabeza { display: flex; align-items: baseline; flex-wrap: wrap; gap: .2rem .7rem; }
 .plato__nombre { font-weight: 500; font-size: .98rem; }
 .plato__bodega { font-weight: 400; color: var(--tinta-2); }
-.plato__marca { font-family: var(--f-titulos); font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rojo); }
+.plato__marca { font-family: var(--f-titulos); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rojo); }
 .plato__desc { font-size: .86rem; line-height: 1.5; color: var(--tinta-2); margin-top: .2rem; max-width: 52ch; }
 
 .recuadro {
@@ -214,7 +213,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .reservas__texto > p { color: var(--hueso-2); font-size: .95rem; max-width: 46ch; margin-top: 1.1rem; }
 .condiciones { display: grid; gap: .7rem; margin-top: 2rem; }
 .condicion { display: flex; gap: .8rem; align-items: baseline; font-size: .88rem; color: var(--hueso-2); border-top: 1px solid var(--noche-3); padding-top: .7rem; }
-.condicion b { flex: none; width: 6.6rem; font-family: var(--f-titulos); font-weight: 400; font-size: .63rem; letter-spacing: .2em; text-transform: uppercase; color: var(--hueso); }
+.condicion b { flex: none; width: 6.6rem; font-family: var(--f-titulos); font-weight: 400; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--hueso); }
 .condicion a { color: var(--hueso); text-decoration: none; border-bottom: 1px solid var(--noche-3); }
 .condicion a:hover { color: var(--rojo-claro); border-bottom-color: var(--rojo-claro); }
 @media (max-width: 900px) { .reservas__grilla { grid-template-columns: 1fr; } }
@@ -222,7 +221,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .formulario { display: grid; gap: 1rem; }
 .campos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .campo { display: grid; gap: .38rem; min-width: 0; }
-.campo label, .campo__etiqueta { font-family: var(--f-titulos); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--hueso-2); }
+.campo label, .campo__etiqueta { font-family: var(--f-titulos); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--hueso-2); }
 .campo input, .campo select, .campo textarea {
   width: 100%; min-width: 0; background: var(--noche-2); border: 1px solid var(--noche-3); color: var(--hueso); border-radius: 0;
   padding: .72rem .85rem; font-size: 1rem; transition: border-color .18s;
@@ -261,7 +260,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .pie .nav__marca .rombo { width: 34px; }
 .pie .nav__marca .nombre { width: 170px; }
 .pie p, .pie address { color: var(--hueso-2); font-size: .9rem; font-style: normal; line-height: 1.7; }
-.pie__titulo { font-family: var(--f-titulos); font-size: .63rem; letter-spacing: .24em; text-transform: uppercase; color: var(--hueso); margin-bottom: .75rem; font-weight: 400; }
+.pie__titulo { font-family: var(--f-titulos); font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--hueso); margin-bottom: .75rem; font-weight: 400; }
 .pie a:not(.nav__marca) { color: var(--hueso-2); text-decoration: none; border-bottom: 1px solid var(--noche-3); }
 .pie a:not(.nav__marca):hover { color: var(--rojo-claro); border-bottom-color: var(--rojo-claro); }
 .pie__base {
