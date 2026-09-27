@@ -1,0 +1,92 @@
+"""Genera version-mil.html (la home estilo Milveintiuno) a partir de datos/carta.json.
+
+La carta va adentro de la página, en pestañas. Para cambiar un plato: editar
+datos/carta.json y correr  python3 scripts/mil.py  (y  python3 scripts/carta.py  para carta.html).
+"""
+import json
+from html import escape
+from pathlib import Path
+
+RAIZ = Path(__file__).resolve().parent.parent
+datos = json.loads((RAIZ / 'datos/carta.json').read_text(encoding='utf-8'))
+plantilla = (RAIZ / 'scripts/mil.plantilla.html').read_text(encoding='utf-8')
+
+# Nombres cortos para las pestañas
+PESTANAS = {
+    'ensaladas': 'Ensaladas',
+    'pescados': 'Pescados',
+    'pastas': 'Pastas',
+    'postres': 'Postres y café',
+    'bebidas': 'Bebidas',
+}
+INICIAL = 'entradas'
+
+e = lambda t: escape(t, quote=False)
+
+
+def plato(p):
+    marca = '<span class="plato__marca">Recomendado</span>' if p.get('recomendado') else ''
+    h = f'<li class="plato"><p class="plato__cabeza"><span class="plato__nombre">{e(p["nombre"])}</span>{marca}</p>'
+    desc = []
+    if p.get('descripcion'):
+        desc.append(e(p['descripcion'].replace(' | ', ' · ')))
+    if p.get('nota'):
+        desc.append(f'<em>{e(p["nota"])}</em>')
+    if desc:
+        h += f'<p class="plato__desc">{" · ".join(desc)}</p>'
+    return h + '</li>'
+
+
+def vino(v):
+    nombre = v['linea'] or v['bodega']
+    sub = f' <span class="plato__bodega">{e(v["bodega"])}</span>' if v['linea'] else ''
+    return (f'<li class="plato"><p class="plato__cabeza"><span class="plato__nombre">{e(nombre)}{sub}</span></p>'
+            f'<p class="plato__desc">{e(" · ".join(v["varietales"]))}</p></li>')
+
+
+def recuadro(p):
+    """La especialidad de la casa, fuera de la lista (como el menú ejecutivo de Milveintiuno)."""
+    return ('<div class="recuadro"><p class="recuadro__para">Para dos</p><div>'
+            f'<h4>{e(p["nombre"])}</h4><p>{e(p["descripcion"])}.</p></div></div>')
+
+
+def grupo(g):
+    h = '<section class="grupo">'
+    if g['titulo']:
+        h += f'<div class="grupo__cabeza"><h3>{e(g["titulo"])}</h3><span></span></div>'
+    if g.get('nota'):
+        h += f'<p class="grupo__nota">{e(g["nota"])}</p>'
+    if 'texto' in g:
+        h += f'<p class="grupo__texto">{e(g["texto"])}</p><p class="grupo__nota">{e(g["extra"])}</p>'
+    elif 'platos' in g:
+        h += '<ul class="platos">' + ''.join(plato(p) for p in g['platos'] if not p.get('destacado') or 'Parrillada' not in p['nombre']) + '</ul>'
+    elif 'vinos' in g:
+        h += '<ul class="platos">' + ''.join(vino(v) for v in g['vinos']) + '</ul>'
+    elif 'lista' in g:
+        h += '<ul class="platos platos--lista">' + ''.join(f'<li class="plato"><p class="plato__cabeza"><span class="plato__nombre">{e(x)}</span></p></li>' for x in g['lista']) + '</ul>'
+    return h + '</section>'
+
+
+tabs, paneles = [], []
+for s in datos['secciones']:
+    sel = s['id'] == INICIAL
+    estado = 'aria-selected="true"' if sel else 'aria-selected="false" tabindex="-1"'
+    tabs.append(f'<button class="pestana" type="button" role="tab" id="tab-{s["id"]}" aria-controls="{s["id"]}" '
+                f'{estado}>{e(PESTANAS.get(s["id"], s["titulo"]))}</button>')
+    oculto = '' if sel else ' hidden'
+    h = f'<div class="panel" role="tabpanel" id="{s["id"]}" aria-labelledby="tab-{s["id"]}"{oculto}>'
+    if s.get('nota'):
+        h += f'<p class="panel__nota">{e(s["nota"])}.</p>'
+    parrillada = [p for g in s['grupos'] for p in g.get('platos', []) if p.get('destacado') and 'Parrillada' in p['nombre']]
+    if parrillada:
+        h += recuadro(parrillada[0])
+    h += ''.join(grupo(g) for g in s['grupos'])
+    if s.get('aclaracion'):
+        h += f'<p class="grupo__nota panel__aclaracion">{e(s["aclaracion"])}</p>'
+    if s.get('frase'):
+        h += f'<p class="panel__frase">{e(s["frase"])}</p>'
+    paneles.append(h + '</div>')
+
+html = plantilla.replace('{{PESTANAS}}', '\n        '.join(tabs)).replace('{{PANELES}}', '\n      '.join(paneles))
+(RAIZ / 'version-mil.html').write_text(html, encoding='utf-8')
+print('version-mil.html generada')
