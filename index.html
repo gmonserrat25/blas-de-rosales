@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilos.css?v=202609252003">
+  <link rel="stylesheet" href="css/estilos.css?v=202609272130">
 </head>
 <body class="con-portada">
 
@@ -47,32 +47,23 @@
 
   <main id="contenido">
 
-    <!-- PORTADA: el mantel -->
+    <!-- PORTADA: la tira -->
     <section id="inicio" class="portada" aria-label="Blas de Rosales" data-portada>
-      <div class="envoltura portada__grilla">
-        <div>
-          <h1 class="portada__marca">
+      <div class="envoltura portada__centro">
+        <h1 class="portada__marca">
           <svg class="portada__rombo" aria-hidden="true"><use href="img/logo/marca.svg#rombo"/></svg>
           <svg class="portada__nombre" role="img" aria-label="Blas de Rosales"><use href="img/logo/marca.svg#nombre"/></svg>
         </h1>
-          <p class="portada__lema">Carnes, pastas y más…</p>
-          <p class="portada__bajada">Carnes a la leña, pastas caseras y boutique de vinos. Desde 2015 en avenida España, La&nbsp;Falda.</p>
-          <div class="portada__acciones">
-            <a class="btn btn--primario" href="#reservas">Reservar mesa</a>
-            <a class="btn btn--linea" href="carta.html">Ver la carta</a>
-            <a class="enlace enlace--tinta" href="tel:+5493548632624">03548 15-632624</a>
-          </div>
+        <p class="portada__lema">Carnes, pastas y más…</p>
+        <div class="portada__acciones">
+          <a class="btn btn--primario" href="#reservas">Reservar mesa</a>
+          <a class="btn btn--linea-clara" href="carta.html">Ver la carta</a>
+          <a class="enlace enlace--claro" href="tel:+5493548632624">03548 15-632624</a>
         </div>
-        <figure class="portada__foto">
-          <img src="img/emplatado-lomo.jpg" alt="Lomo emplatado en la cocina, terminado con cebolla encurtida" fetchpriority="high">
-        </figure>
+        <p class="portada__horario"><span>Av. España 1320, La Falda</span><span>Mediodía 13 a 15 h · Noche 21 a 23&nbsp;h, lun. a&nbsp;sáb.</span></p>
       </div>
+      <figure class="portada__tira"><img src="img/tira-plancha.jpg" alt="Tira de asado en la plancha, con una copa de vino tinto" fetchpriority="high"></figure>
     </section>
-
-    <!-- LA PARED DE VERDAD -->
-    <figure class="pared">
-      <img src="img/salon-marca.jpg" alt="El salón, con la pared naranja y el cartel BR Blas de Rosales" width="2000" height="1000">
-    </figure>
 
     <!-- BIENVENIDA -->
     <section id="bienvenida" class="seccion bienvenida">
@@ -284,6 +275,6 @@
     <a class="btn btn--primario" href="https://wa.me/5493548632624?text=Hola!%20Quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
   </div>
 
-  <script src="js/sitio.js?v=202609252003" defer></script>
+  <script src="js/sitio.js?v=202609272130" defer></script>
 </body>
 </html>
