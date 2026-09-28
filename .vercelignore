@@ -1,7 +1,8 @@
 assets-src/
 ref/
-comparar.html
-.DS_Store
+scripts/
+datos/
 portada-*.html
+comparar*.html
 css/propuestas.css
-comparar-mil.html
+.claude/
