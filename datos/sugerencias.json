@@ -1,0 +1,56 @@
+{
+ "_como": "Cada plato se escribe como está en carta.json: el nombre, o «Nombre · Descripción» si hay varios con el mismo nombre. Los vinos, «Bodega o línea · Varietal», y con « = Texto» al final se muestra ese texto. scripts/pagina.py avisa si alguno no está en la carta.",
+ "ganas": [
+  {
+   "id": "lena",
+   "etiqueta": "A la leña",
+   "compartir": ["Provoleta Blas de Rosales", "Empanadas criollas", "Tabla de achuras"],
+   "uno": ["Parrillada clásica para uno", "Bife de chorizo", "Entraña", "Cabrito serrano"],
+   "para_dos": "Parrillada Blas de Rosales",
+   "_acompanar": "La parrillada ya trae empanada, provoleta, achuras, papas y ensalada: al lado va algo que no traiga.",
+   "acompanar": ["Papas Blas", "Tibia de vegetales", "Rúcula, parmesano y cherry"],
+   "cortes": ["Entraña", "Vacío", "Bife de chorizo", "Tira de asado"],
+   "sin_carne": ["Parrillada de vegetales"],
+   "vinos": ["Finca Las Perdices · Malbec", "Saint Felicien · Malbec", "Rutini · Cabernet-Malbec"],
+   "copa": "Finca Las Perdices · Malbec por copa = Malbec por copa, de Finca Las Perdices"
+  },
+  {
+   "id": "cocina",
+   "etiqueta": "Carnes de la cocina",
+   "compartir": ["Flatbread", "Provoleta Blas de Rosales", "Bastoncitos de queso rebozados"],
+   "principales": ["Lomo Ros", "Costillitas de cerdo al whisky", "Pollo mediterráneo", "Lomo en Malbec y frutos rojos", "Cordero al Oporto", "Entrecôte bacon", "Bife de chorizo al chimichurri"],
+   "sin_carne": ["Risotto de hongos", "Sorrentinos · De calabaza y queso"],
+   "vinos": ["Salentein Reserve · Malbec", "Saint Felicien · Cabernet Franc", "D.V. Catena · Malbec-Malbec"],
+   "copa": "Finca Las Perdices · Malbec por copa = Malbec por copa, de Finca Las Perdices"
+  },
+  {
+   "id": "pastas",
+   "etiqueta": "Pastas",
+   "compartir": ["Flatbread", "Bastoncitos de queso rebozados", "Rúcula, parmesano y cherry"],
+   "principales": ["Sorrentinos · De calabaza y queso", "Tallarines de remolacha", "Risotto \"Tony\"", "Crepes de mariscos", "Sorrentinos · De salmón"],
+   "sin_carne": ["Sorrentinos · De espinacas y 4 quesos", "Risotto de vegetales", "Sorrentinos · De ricotta y nuez"],
+   "vinos": ["Killka · Red Blend", "Callia · Chardonnay", "El Potrillo · Pinot Noir"],
+   "copa": "Finca Las Perdices · Malbec por copa = Malbec por copa, de Finca Las Perdices"
+  },
+  {
+   "id": "mar",
+   "etiqueta": "Pescados",
+   "compartir": ["Gambas al ajillo", "Rabas", "Langostinos apanados"],
+   "principales": ["Salmón rosado Blas", "Trucha a la pimienta", "Roulade de merluza y espinaca", "Risotto con camarones", "Papillot de surubí", "Cazuela de mariscos"],
+   "sin_carne": ["Risotto de hongos", "Risotto de vegetales"],
+   "vinos": ["Etchart Privado · Torrontés", "Callia · Chardonnay", "Norton · Sauvignon Blanc"],
+   "copa": "San Felipe · San Felipe Caramañola Blanco 3/8 = Media botella de San Felipe blanco"
+  },
+  {
+   "id": "todo",
+   "etiqueta": "Un poco de todo",
+   "compartir": ["Provoleta Blas de Rosales", "Fish & Chips", "Flatbread"],
+   "principales": ["Lomo Ros", "Sorrentinos · De calabaza y queso", "Salmón rosado Blas", "Costillitas de cerdo al whisky", "Risotto \"Tony\"", "Cordero al Oporto"],
+   "sin_carne": ["Parrillada de vegetales", "Sorrentinos · De espinacas y 4 quesos"],
+   "vinos": ["Nicasia Vineyards · Red Blend Malbec", "Luigi Bosca · Espumante Brut Nature", "Alamos · Pinot Noir"],
+   "copa": "Finca Las Perdices · Malbec por copa = Malbec por copa, de Finca Las Perdices"
+  }
+ ],
+ "compartir_sin_carne": ["Bastoncitos de queso rebozados", "Tibia de vegetales", "Rúcula, parmesano y cherry"],
+ "postres": ["Copa Blas de Rosales", "Tiramisú", "Crème brûlée", "Flan casero", "Copa tentación", "Crepe · De dulce de leche flambeado"]
+}

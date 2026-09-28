@@ -1,4 +1,4 @@
-/* Blas de Rosales — versión con la estructura de Milveintiuno.
+/* Blas de Rosales — la home.
    Piedra cálida de día, noche para la reserva y el pie; el único acento es el rojo de la marca. */
 
 :root {
@@ -241,6 +241,36 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .opcion span:hover { border-color: var(--hueso-2); color: var(--hueso); }
 .opcion input:checked + span { border-color: var(--rojo-claro); color: var(--hueso); background: rgba(196, 48, 43, .22); }
 .opcion input:focus-visible + span { outline: 2px solid var(--rojo-claro); outline-offset: 2px; }
+.campo .opcion--texto, .campo .tilde { font-family: var(--f-texto); letter-spacing: normal; text-transform: none; }
+.opcion--texto span { padding-inline: 1rem; font-size: .92rem; }
+
+/* sugeridor: vive adentro del formulario, con las mismas piezas */
+.sugeridor { border: 0; margin: 0; padding: 0; gap: .6rem; }
+.sugeridor legend { padding: 0; margin-bottom: .38rem; }
+.campo__opcional { margin-left: .5rem; letter-spacing: .12em; color: var(--hueso-2); opacity: .8; }
+.campo .tilde { display: inline-flex; align-items: center; min-height: 44px; gap: .55rem; font-size: .88rem; color: var(--hueso-2); cursor: pointer; }
+.tilde input { color-scheme: dark; width: 1.05rem; height: 1.05rem; margin: 0; accent-color: var(--rojo); }
+.campo .tilde:hover { color: var(--hueso); }
+.sugerencia { border: 1px solid var(--noche-3); background: var(--noche-2); padding: .4rem 1rem .9rem; margin-top: .3rem; }
+.sugerencia__lista { margin: 0; }
+.sugerencia__fila { display: flex; gap: .8rem; align-items: baseline; padding-block: .6rem; border-bottom: 1px solid var(--noche-3); }
+.sugerencia__fila dt {
+  flex: none; width: 8.4rem; font-family: var(--f-titulos); font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--hueso-2);
+}
+.sugerencia__fila dd { margin: 0; display: grid; gap: .15rem; font-size: .95rem; color: var(--hueso); }
+.sugerencia__fila small { font-size: .78rem; font-style: italic; color: var(--hueso-2); }
+.sugerencia__pie { display: flex; justify-content: space-between; align-items: center; gap: .6rem 1rem; flex-wrap: wrap; margin-top: .8rem; }
+.sugerencia__otra {
+  background: none; border: 0; padding: 0 .1rem; min-height: 44px; cursor: pointer; font-size: .88rem; color: var(--hueso);
+  text-decoration: underline 1px var(--hueso-2); text-underline-offset: .35em; transition: color .18s, text-decoration-color .18s;
+}
+.sugerencia__otra:hover { color: var(--rojo-claro); text-decoration-color: var(--rojo-claro); }
+.sugerencia__otra:active { color: var(--rojo); }
+@media (max-width: 420px) {
+  .sugerencia__fila { flex-direction: column; gap: .2rem; }
+  .sugerencia__fila dt { width: auto; }
+}
+
 .formulario__enviar { width: 100%; padding-block: 1.05rem; font-size: .78rem; letter-spacing: .18em; margin-top: .4rem; }
 .formulario__aviso { min-height: 1.4em; font-size: .85rem; color: var(--hueso-2); }
 @media (max-width: 520px) { .campos { grid-template-columns: 1fr; } }

@@ -1,7 +1,9 @@
-"""Genera index.html (la home, estilo Milveintiuno) a partir de datos/carta.json.
+"""Genera index.html (la home) a partir de datos/carta.json y datos/sugerencias.json.
 
 La carta va adentro de la página, en pestañas. Para cambiar un plato: editar
-datos/carta.json y correr  python3 scripts/mil.py.
+datos/carta.json y correr  python3 scripts/pagina.py.
+Las ideas de "qué pedir" de la reserva salen de datos/sugerencias.json: si un plato
+o un vino de ahí no está en la carta, el script se frena y dice cuál.
 """
 import json
 from html import escape
@@ -9,7 +11,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 datos = json.loads((RAIZ / 'datos/carta.json').read_text(encoding='utf-8'))
-plantilla = (RAIZ / 'scripts/mil.plantilla.html').read_text(encoding='utf-8')
+plantilla = (RAIZ / 'scripts/pagina.plantilla.html').read_text(encoding='utf-8')
 
 # Nombres cortos para las pestañas
 PESTANAS = {
@@ -45,7 +47,7 @@ def vino(v):
 
 
 def recuadro(p):
-    """La especialidad de la casa, fuera de la lista (como el menú ejecutivo de Milveintiuno)."""
+    """La especialidad de la casa, fuera de la lista."""
     return ('<div class="recuadro"><p class="recuadro__para">Para dos</p><div>'
             f'<h4>{e(p["nombre"])}</h4><p>{e(p["descripcion"])}.</p></div></div>')
 
@@ -87,6 +89,57 @@ for s in datos['secciones']:
         h += f'<p class="panel__frase">{e(s["frase"])}</p>'
     paneles.append(h + '</div>')
 
-html = plantilla.replace('{{PESTANAS}}', '\n        '.join(tabs)).replace('{{PANELES}}', '\n      '.join(paneles))
+# ---------- sugerencias para la reserva ----------
+sug = json.loads((RAIZ / 'datos/sugerencias.json').read_text(encoding='utf-8'))
+platos_carta = [(p, g) for s in datos['secciones'] for g in s['grupos'] for p in g.get('platos', [])]
+vinos_carta = [v for s in datos['secciones'] for g in s['grupos'] for v in g.get('vinos', [])]
+faltan = []
+
+
+def sug_plato(ref):
+    nombre, _, desc = (x.strip() for x in ref.partition('·'))
+    for p, g in platos_carta:
+        if p['nombre'] == nombre and (not desc or p.get('descripcion', '').startswith(desc)):
+            h = {'t': f'{nombre} {desc[0].lower()}{desc[1:]}' if desc else nombre}
+            if 'disponibilidad' in (p.get('nota', '') + g.get('nota', '')).lower():
+                h['aviso'] = 'sujeto a disponibilidad'
+            return h
+    faltan.append(ref)
+
+
+def sug_vino(ref):
+    ref, _, texto = (x.strip() for x in ref.partition('='))
+    linea, _, varietal = (x.strip() for x in ref.partition('·'))
+    if not any(linea in (v['linea'], v['bodega']) and varietal in v['varietales'] for v in vinos_carta):
+        faltan.append(ref)
+    return {'t': texto or f'{linea} {varietal}'}
+
+
+ganas = []
+for g in sug['ganas']:
+    r = {'id': g['id'], 'etiqueta': g['etiqueta']}
+    for k in ('compartir', 'acompanar', 'principales', 'uno', 'cortes', 'sin_carne'):
+        if k in g:
+            r[k] = [sug_plato(x) for x in g[k]]
+    if 'para_dos' in g:
+        r['para_dos'] = sug_plato(g['para_dos'])
+    r['vinos'] = [sug_vino(x) for x in g['vinos']]
+    if 'copa' in g:
+        r['copa'] = sug_vino(g['copa'])
+    ganas.append(r)
+sugerencias = {
+    'ganas': ganas,
+    'compartir_sin_carne': [sug_plato(x) for x in sug['compartir_sin_carne']],
+    'postres': [sug_plato(x) for x in sug['postres']],
+}
+if faltan:
+    raise SystemExit('En datos/sugerencias.json hay cosas que no están en la carta:\n  ' + '\n  '.join(dict.fromkeys(faltan)))
+
+chips = [f'<label class="opcion opcion--texto"><input type="radio" name="ganas" value="{g["id"]}"><span>{e(g["etiqueta"])}</span></label>'
+         for g in ganas]
+json_sug = json.dumps(sugerencias, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+
+html = (plantilla.replace('{{PESTANAS}}', '\n        '.join(tabs)).replace('{{PANELES}}', '\n      '.join(paneles))
+        .replace('{{GANAS}}', '\n              '.join(chips)).replace('{{SUGERENCIAS}}', json_sug))
 (RAIZ / 'index.html').write_text(html, encoding='utf-8')
 print('index.html generada')
