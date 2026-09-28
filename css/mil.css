@@ -155,7 +155,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .carta { background: var(--piedra-2); border-top: 1px solid var(--regla); padding-top: clamp(3rem, 6vw, 4.5rem); }
 .carta__cabeza { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; }
 .carta__cabeza h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 200; }
-.carta__cabeza .enlace { font-size: .92rem; color: var(--tinta-2); }
 
 .pestanas {
   position: sticky; top: var(--alto-nav); z-index: 40; background: var(--piedra-2);

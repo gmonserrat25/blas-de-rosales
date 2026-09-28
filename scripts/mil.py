@@ -1,7 +1,7 @@
-"""Genera version-mil.html (la home estilo Milveintiuno) a partir de datos/carta.json.
+"""Genera index.html (la home, estilo Milveintiuno) a partir de datos/carta.json.
 
 La carta va adentro de la página, en pestañas. Para cambiar un plato: editar
-datos/carta.json y correr  python3 scripts/mil.py  (y  python3 scripts/carta.py  para carta.html).
+datos/carta.json y correr  python3 scripts/mil.py.
 """
 import json
 from html import escape
@@ -88,5 +88,5 @@ for s in datos['secciones']:
     paneles.append(h + '</div>')
 
 html = plantilla.replace('{{PESTANAS}}', '\n        '.join(tabs)).replace('{{PANELES}}', '\n      '.join(paneles))
-(RAIZ / 'version-mil.html').write_text(html, encoding='utf-8')
-print('version-mil.html generada')
+(RAIZ / 'index.html').write_text(html, encoding='utf-8')
+print('index.html generada')
