@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/mil.css?v=202609281200">
+  <link rel="stylesheet" href="css/estilos.css?v=202609281800">
 </head>
 <body>
 
@@ -146,6 +146,20 @@
               <label class="opcion"><input type="radio" name="personas" value="más de 8"><span>+8</span></label>
             </div>
           </div>
+          <fieldset class="campo sugeridor" data-sugeridor>
+            <legend class="campo__etiqueta">¿Les sugerimos qué pedir? <span class="campo__opcional">Opcional</span></legend>
+            <div class="opciones">
+              {{GANAS}}
+            </div>
+            <label class="tilde"><input type="checkbox" name="sin_carne"><span>Alguien de la mesa no come carne</span></label>
+            <div class="sugerencia" data-sugerencia hidden>
+              <dl class="sugerencia__lista" data-sugerencia-lista aria-live="polite"></dl>
+              <div class="sugerencia__pie">
+                <label class="tilde"><input type="checkbox" name="sumar" checked><span>Sumarla al mensaje</span></label>
+                <button class="sugerencia__otra" type="button" data-otra>Otra idea</button>
+              </div>
+            </div>
+          </fieldset>
           <div class="campo">
             <label for="r-notas">Aclaraciones</label>
             <textarea id="r-notas" name="notas" placeholder="En el deck si se puede, silla para bebé, un cumpleaños…"></textarea>
@@ -197,6 +211,7 @@
     </div>
   </footer>
 
-  <script src="js/mil.js?v=202609281200" defer></script>
+  <script type="application/json" id="sugerencias">{{SUGERENCIAS}}</script>
+  <script src="js/sitio.js?v=202609281800" defer></script>
 </body>
 </html>
