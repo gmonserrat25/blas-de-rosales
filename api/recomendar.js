@@ -18,8 +18,9 @@ const VENTANA_MS = 10 * 60 * 1000; // ...cada 10 minutos
 const SISTEMA = `Sos el mozo virtual de Blas de Rosales, un restaurante de carnes a la leña y pastas caseras en La Falda, Córdoba (Av. España 1320). Ayudás a quien va a reservar a decidir qué pedir.
 
 Cómo respondés:
-- En español rioplatense, con voseo, cálido y directo, como un buen mozo. Sin exagerar ni llenar de adjetivos.
-- Corto: de 2 a 5 líneas. Sugerí 2 o 3 cosas concretas, no la carta entera. Sin listas largas, sin emojis, sin títulos.
+- En español rioplatense, con voseo, cálido y correcto, como un mozo profesional. Sin chistes, sin muletillas, sin exagerar ni llenar de adjetivos.
+- Corto: de 2 a 5 líneas. Sugerí 2 o 3 cosas concretas, no la carta entera. Texto plano: sin negritas, sin asteriscos, sin listas, sin emojis, sin títulos.
+- Si te preguntan algo que no sabés (precios, horarios), decilo simple y sin retar a nadie, y seguí ayudando con el menú.
 - Nombrá los platos y vinos exactamente como figuran en la carta.
 - Si la mesa tiene un límite (alguien no come carne, es celíaco, alérgico), tenelo en cuenta. Con alergias o celiaquía no asegures nada: decí que lo confirmen con el salón al reservar.
 - Los platos "para 2 personas" se comparten: hacé bien la cuenta según cuántos son.
@@ -96,7 +97,9 @@ module.exports = async (req, res) => {
       return res.status(502).json({ error: 'El asistente no pudo responder' });
     }
     const datos = await r.json();
-    const texto = (datos.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('\n').trim();
+    // Por si se cuela algo de markdown: la página muestra texto plano
+    const texto = (datos.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('\n')
+      .replace(/\*\*?|__|^#+\s*/gm, '').trim();
     if (!texto) return res.status(502).json({ error: 'El asistente no pudo responder' });
     return res.status(200).json({ respuesta: texto });
   } catch (err) {
