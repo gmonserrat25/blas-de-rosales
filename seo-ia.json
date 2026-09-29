@@ -1,0 +1,77 @@
+{
+  "url": "https://blas-de-rosales.vercel.app",
+  "nombre": "Blas de Rosales",
+  "tipo": "Restaurant",
+  "rubro": "Restaurante de carnes a la leña y pastas caseras",
+  "descripcion": "Restaurante en La Falda, Córdoba. Carnes a la leña, pastas caseras, trucha, salmón, risottos y boutique de vinos, con salón y deck al aire libre.",
+  "direccion": {
+    "calle": "Av. España 1320",
+    "ciudad": "La Falda",
+    "provincia": "Córdoba",
+    "cp": "5172",
+    "pais": "AR"
+  },
+  "telefono": "+54 3548 632624",
+  "horarios": [
+    {
+      "dias": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "abre": "13:00",
+      "cierra": "15:00"
+    },
+    {
+      "dias": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "abre": "21:00",
+      "cierra": "23:00"
+    }
+  ],
+  "horarios_texto": "Mediodía todos los días de 13 a 15 h; noche de lunes a sábado de 21 a 23 h (domingo a la noche cerrado)",
+  "cocina": [
+    "Parrilla",
+    "Pastas caseras",
+    "Pescados",
+    "Risottos"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/blasderosales/",
+    "https://www.tripadvisor.com.ar/Restaurant_Review-g312770-d8609450-Reviews-Blas_de_Rosales-La_Falda_Province_of_Cordoba_Central_Argentina.html"
+  ],
+  "mapa": "https://www.google.com/maps/dir/?api=1&destination=Blas+de+Rosales,+Av.+Espa%C3%B1a+1320,+La+Falda",
+  "imagen": "https://blas-de-rosales.vercel.app/img/og-logo.jpg",
+  "faq": [
+    {
+      "p": "¿Dónde queda Blas de Rosales?",
+      "r": "En Av. España 1320, La Falda, Córdoba. Tenemos salón y un deck al aire libre."
+    },
+    {
+      "p": "¿Qué días y a qué hora abren?",
+      "r": "Al mediodía todos los días, de 13 a 15 h. A la noche, de lunes a sábado, de 21 a 23 h. Los domingos a la noche estamos cerrados."
+    },
+    {
+      "p": "¿Cómo reservo una mesa?",
+      "r": "Desde el formulario de esta página elegís día, hora y cantidad de personas, y te confirmamos por WhatsApp. También podés escribirnos directo al 03548 15-632624."
+    },
+    {
+      "p": "¿Qué se come?",
+      "r": "Carnes a la leña, pastas caseras, trucha, salmón y risottos, además de la parrillada Blas de Rosales para dos. También hay boutique de vinos."
+    },
+    {
+      "p": "¿Aceptan grupos grandes?",
+      "r": "Sí. Si son más de 8, contanos en las aclaraciones de la reserva y armamos la mesa."
+    }
+  ]
+}

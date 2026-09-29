@@ -1,0 +1,34 @@
+# Blas de Rosales
+
+> Restaurante en La Falda, Córdoba. Carnes a la leña, pastas caseras, trucha, salmón, risottos y boutique de vinos, con salón y deck al aire libre.
+
+## Datos
+
+- Rubro: Restaurante de carnes a la leña y pastas caseras
+- Dirección: Av. España 1320, La Falda, Córdoba, Argentina
+- Teléfono: +54 3548 632624
+- Horarios: Mediodía todos los días de 13 a 15 h; noche de lunes a sábado de 21 a 23 h (domingo a la noche cerrado)
+- Cómo llegar: https://www.google.com/maps/dir/?api=1&destination=Blas+de+Rosales,+Av.+Espa%C3%B1a+1320,+La+Falda
+- Redes: https://www.instagram.com/blasderosales/
+- Redes: https://www.tripadvisor.com.ar/Restaurant_Review-g312770-d8609450-Reviews-Blas_de_Rosales-La_Falda_Province_of_Cordoba_Central_Argentina.html
+
+## Páginas
+
+- [Inicio](https://blas-de-rosales.vercel.app/): Blas de Rosales
+
+## Preguntas frecuentes
+
+**¿Dónde queda Blas de Rosales?**
+En Av. España 1320, La Falda, Córdoba. Tenemos salón y un deck al aire libre.
+
+**¿Qué días y a qué hora abren?**
+Al mediodía todos los días, de 13 a 15 h. A la noche, de lunes a sábado, de 21 a 23 h. Los domingos a la noche estamos cerrados.
+
+**¿Cómo reservo una mesa?**
+Desde el formulario de esta página elegís día, hora y cantidad de personas, y te confirmamos por WhatsApp. También podés escribirnos directo al 03548 15-632624.
+
+**¿Qué se come?**
+Carnes a la leña, pastas caseras, trucha, salmón y risottos, además de la parrillada Blas de Rosales para dos. También hay boutique de vinos.
+
+**¿Aceptan grupos grandes?**
+Sí. Si son más de 8, contanos en las aclaraciones de la reserva y armamos la mesa.

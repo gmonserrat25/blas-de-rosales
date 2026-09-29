@@ -298,3 +298,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
+
+/* ---------- preguntas ---------- */
+.preguntas { padding-block: clamp(3.6rem, 8vw, 6rem); max-width: 860px; }
+.preguntas h2 { font-size: clamp(1.65rem, 3.3vw, 2.45rem); font-weight: 200; line-height: 1.2; margin-bottom: 1.8rem; }
+.preguntas h2 em { font-style: normal; color: var(--rojo); }
+.preguntas details { border-top: 1px solid var(--regla); }
+.preguntas details:last-child { border-bottom: 1px solid var(--regla); }
+.preguntas summary { cursor: pointer; list-style: none; padding: 1.1rem 2rem 1.1rem 0; position: relative; font-family: var(--f-titulos); font-weight: 300; font-size: 1.05rem; }
+.preguntas summary::-webkit-details-marker { display: none; }
+.preguntas summary::after { content: "+"; position: absolute; right: .2rem; top: 50%; transform: translateY(-50%); color: var(--rojo); font-size: 1.3rem; }
+.preguntas details[open] summary::after { content: "\2212"; }
+.preguntas details p { padding: 0 2rem 1.2rem 0; color: var(--tinta-2); max-width: 60ch; }
