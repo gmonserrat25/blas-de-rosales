@@ -157,6 +157,64 @@ function mostrarSugerencia() {
 });
 reserva.querySelector('[data-otra]').addEventListener('click', () => { vuelta += 1; mostrarSugerencia(); });
 
+// Mozo virtual: le pregunta a /api/recomendar (una función de Vercel que tiene la key y la carta).
+// La charla se guarda acá y se manda entera en cada consulta.
+const API = /(^|\.)vercel\.app$|^(localhost|127\.0\.0\.1)$/.test(location.hostname)
+  ? '/api/recomendar'
+  : 'https://blas-de-rosales.vercel.app/api/recomendar';
+const charla = reserva.querySelector('[data-charla]');
+const pregunta = reserva.querySelector('[data-pregunta]');
+const preguntar = reserva.querySelector('[data-preguntar]');
+const historial = [];
+let pensando = false;
+
+function burbuja(quien, texto) {
+  const p = document.createElement('p');
+  p.className = `asistente__msg asistente__msg--${quien}`;
+  p.textContent = texto;
+  charla.append(p);
+  charla.scrollTop = charla.scrollHeight;
+  return p;
+}
+
+async function consultar() {
+  const texto = pregunta.value.trim();
+  if (!texto || pensando) return;
+  pensando = true;
+  preguntar.disabled = true;
+  pregunta.value = '';
+  historial.push({ role: 'user', content: texto });
+  burbuja('cliente', texto);
+  const espera = burbuja('mozo', 'Pensando…');
+  espera.classList.add('asistente__msg--espera');
+  try {
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mensajes: historial }),
+    });
+    const datos = await r.json().catch(() => ({}));
+    if (!r.ok || !datos.respuesta) throw new Error(datos.error || 'sin respuesta');
+    historial.push({ role: 'assistant', content: datos.respuesta });
+    espera.classList.remove('asistente__msg--espera');
+    espera.textContent = datos.respuesta;
+  } catch (err) {
+    historial.pop();
+    espera.classList.remove('asistente__msg--espera');
+    espera.classList.add('asistente__msg--error');
+    espera.textContent = 'No pudimos consultarlo ahora. Probá con las ideas de arriba o preguntale al salón.';
+  }
+  pensando = false;
+  preguntar.disabled = false;
+  charla.scrollTop = charla.scrollHeight;
+}
+
+preguntar.addEventListener('click', consultar);
+// Enter en el campo no debe enviar la reserva por WhatsApp
+pregunta.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') { e.preventDefault(); consultar(); }
+});
+
 const enLista = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} y ${xs.at(-1)}` : xs[0]);
 
 reserva.addEventListener('submit', (e) => {

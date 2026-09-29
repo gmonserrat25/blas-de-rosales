@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilos.css?v=202609281800">
+  <link rel="stylesheet" href="css/estilos.css?v=202609291200">
 </head>
 <body>
 
@@ -159,6 +159,15 @@
                 <button class="sugerencia__otra" type="button" data-otra>Otra idea</button>
               </div>
             </div>
+            <div class="asistente" data-asistente>
+              <label class="campo__etiqueta" for="r-pregunta">O contale al mozo qué se les antoja</label>
+              <div class="asistente__charla" data-charla aria-live="polite"></div>
+              <div class="asistente__entrada">
+                <input id="r-pregunta" type="text" maxlength="500" autocomplete="off" placeholder="Somos cuatro, uno no come carne y queremos compartir" data-pregunta>
+                <button class="btn btn--linea-clara btn--chico" type="button" data-preguntar>Preguntar</button>
+              </div>
+              <p class="asistente__nota">Te responde una IA que conoce la carta. Si hay alergias o celiaquía, confirmalo con el salón.</p>
+            </div>
           </fieldset>
           <div class="campo">
             <label for="r-notas">Aclaraciones</label>
@@ -212,6 +221,6 @@
   </footer>
 
   <script type="application/json" id="sugerencias">{{SUGERENCIAS}}</script>
-  <script src="js/sitio.js?v=202609281800" defer></script>
+  <script src="js/sitio.js?v=202609291200" defer></script>
 </body>
 </html>
