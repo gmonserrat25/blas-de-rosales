@@ -266,6 +266,20 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .sugerencia__otra:hover { color: var(--rojo-claro); text-decoration-color: var(--rojo-claro); }
 .sugerencia__otra:active { color: var(--rojo); }
+/* mozo virtual */
+.asistente { display: grid; gap: .55rem; margin-top: .9rem; }
+.asistente__charla { display: grid; gap: .5rem; max-height: 19rem; overflow-y: auto; }
+.asistente__charla:empty { display: none; }
+.asistente__msg { margin: 0; padding: .65rem .9rem; font-size: .93rem; line-height: 1.5; max-width: 92%; white-space: pre-line; }
+.asistente__msg--cliente { justify-self: end; border: 1px solid var(--noche-3); color: var(--hueso-2); }
+.asistente__msg--mozo { justify-self: start; background: var(--noche-2); border-left: 2px solid var(--rojo-claro); color: var(--hueso); }
+.asistente__msg--espera { color: var(--hueso-2); font-style: italic; }
+.asistente__msg--error { border-left-color: var(--hueso-2); color: var(--hueso-2); }
+.asistente__entrada { display: flex; gap: .6rem; }
+.asistente__entrada input { flex: 1; min-width: 0; }
+.asistente__entrada .btn { flex: none; }
+.asistente__entrada .btn:disabled { opacity: .5; cursor: default; }
+.asistente__nota { margin: 0; font-size: .78rem; color: var(--hueso-2); }
 @media (max-width: 420px) {
   .sugerencia__fila { flex-direction: column; gap: .2rem; }
   .sugerencia__fila dt { width: auto; }

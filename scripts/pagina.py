@@ -143,3 +143,42 @@ html = (plantilla.replace('{{PESTANAS}}', '\n        '.join(tabs)).replace('{{PA
         .replace('{{GANAS}}', '\n              '.join(chips)).replace('{{SUGERENCIAS}}', json_sug))
 (RAIZ / 'index.html').write_text(html, encoding='utf-8')
 print('index.html generada')
+
+
+# La carta en texto plano para el asistente (api/recomendar.js): la IA sólo puede recomendar lo que figura acá.
+def linea_plato(p):
+    t = p['nombre']
+    if p.get('descripcion'):
+        t += f" ({p['descripcion']})"
+    if p.get('nota'):
+        t += f" [{p['nota']}]"
+    if p.get('recomendado'):
+        t += ' [recomendado de la casa]'
+    return '- ' + t
+
+
+carta = []
+for s in datos['secciones']:
+    carta.append(f"## {s['titulo']}" + (f" ({s['nota']})" if s.get('nota') else ''))
+    for g in s['grupos']:
+        if g.get('titulo'):
+            carta.append(f"### {g['titulo']}")
+        for p in g.get('platos', []):
+            carta.append(linea_plato(p))
+        for v in g.get('vinos', []):
+            nombre = v['bodega'] + (f" {v['linea']}" if v['linea'] and v['linea'] != v['bodega'] else '')
+            carta.append(f"- {nombre}: {', '.join(v['varietales'])}")
+        for x in g.get('lista', []):
+            carta.append(f'- {x}')
+        for k in ('texto', 'extra'):
+            if g.get(k):
+                carta.append(g[k])
+        if g.get('nota'):
+            carta.append(f"({g['nota']})")
+    if s.get('aclaracion'):
+        carta.append(s['aclaracion'])
+(RAIZ / 'api').mkdir(exist_ok=True)
+(RAIZ / 'api/_carta.js').write_text(
+    '// Lo genera scripts/pagina.py desde datos/carta.json: no se edita a mano.\n'
+    'module.exports = ' + json.dumps('\n'.join(carta), ensure_ascii=False) + ';\n', encoding='utf-8')
+print('api/_carta.js generado')
