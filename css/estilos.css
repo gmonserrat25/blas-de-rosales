@@ -266,20 +266,52 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .sugerencia__otra:hover { color: var(--rojo-claro); text-decoration-color: var(--rojo-claro); }
 .sugerencia__otra:active { color: var(--rojo); }
-/* mozo virtual */
-.asistente { display: grid; gap: .55rem; margin-top: .9rem; }
-.asistente__charla { display: grid; gap: .5rem; max-height: 19rem; overflow-y: auto; }
-.asistente__charla:empty { display: none; }
-.asistente__msg { margin: 0; padding: .65rem .9rem; font-size: .93rem; line-height: 1.5; max-width: 92%; white-space: pre-line; }
-.asistente__msg--cliente { justify-self: end; border: 1px solid var(--noche-3); color: var(--hueso-2); }
-.asistente__msg--mozo { justify-self: start; background: var(--noche-2); border-left: 2px solid var(--rojo-claro); color: var(--hueso); }
-.asistente__msg--espera { color: var(--hueso-2); font-style: italic; }
-.asistente__msg--error { border-left-color: var(--hueso-2); color: var(--hueso-2); }
-.asistente__entrada { display: flex; gap: .6rem; }
-.asistente__entrada input { flex: 1; min-width: 0; }
-.asistente__entrada .btn { flex: none; }
-.asistente__entrada .btn:disabled { opacity: .5; cursor: default; }
-.asistente__nota { margin: 0; font-size: .78rem; color: var(--hueso-2); }
+/* mozo virtual: pestaña flotante que abre un chat de ayuda */
+.mozo { position: fixed; right: clamp(.8rem, 2.5vw, 1.6rem); bottom: clamp(.8rem, 2.5vw, 1.6rem); z-index: 60; display: grid; justify-items: end; gap: .7rem; }
+.mozo__abrir {
+  display: inline-flex; align-items: center; gap: .65rem; min-height: 48px; padding: .6rem 1.15rem; cursor: pointer;
+  background: var(--noche); color: var(--hueso); border: 1px solid var(--noche-3); border-radius: 999px;
+  font-size: .9rem; box-shadow: 0 6px 22px rgba(23, 19, 15, .3); transition: background-color .2s, border-color .2s;
+}
+.mozo__abrir .rombo { color: var(--rojo-claro); }
+.mozo__abrir b { font-weight: 700; }
+.mozo__abrir:hover { background: var(--noche-2); border-color: var(--hueso-2); }
+.mozo__abrir:focus-visible { outline-color: var(--rojo-claro); }
+.mozo.is-abierto .mozo__abrir { display: none; }
+.mozo__panel {
+  width: min(24rem, calc(100vw - 1.6rem)); max-height: min(34rem, calc(100dvh - 2rem)); display: flex; flex-direction: column;
+  background: var(--noche); color: var(--hueso); border: 1px solid var(--noche-3); box-shadow: 0 14px 40px rgba(23, 19, 15, .45);
+}
+.mozo__panel[hidden] { display: none; }
+.mozo__panel :focus-visible { outline-color: var(--rojo-claro); }
+.mozo__cabeza { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem 1rem .9rem 1.15rem; border-bottom: 1px solid var(--noche-3); }
+.mozo__cabeza h2 { font-size: 1rem; font-weight: 400; letter-spacing: .02em; color: var(--hueso); }
+.mozo__cabeza p { font-size: .8rem; color: var(--hueso-2); }
+.mozo__cerrar { display: grid; place-items: center; width: 44px; height: 44px; margin: -.4rem 0; background: none; border: 0; color: var(--hueso-2); cursor: pointer; transition: color .18s; }
+.mozo__cerrar:hover { color: var(--hueso); }
+.mozo__charla { flex: 1; min-height: 8rem; overflow-y: auto; display: grid; align-content: start; gap: .5rem; padding: 1rem 1.15rem; }
+.mozo__msg { margin: 0; padding: .65rem .9rem; font-size: .93rem; line-height: 1.5; max-width: 92%; white-space: pre-line; }
+.mozo__msg--cliente { justify-self: end; border: 1px solid var(--noche-3); color: var(--hueso-2); }
+.mozo__msg--mozo { justify-self: start; background: var(--noche-2); border-left: 2px solid var(--rojo-claro); color: var(--hueso); }
+.mozo__msg--espera { color: var(--hueso-2); font-style: italic; }
+.mozo__msg--error { border-left-color: var(--hueso-2); color: var(--hueso-2); }
+.mozo__entrada { display: flex; gap: .6rem; padding: .8rem 1.15rem; border-top: 1px solid var(--noche-3); }
+.mozo__entrada input {
+  flex: 1; min-width: 0; min-height: 2.9rem; padding: .6rem .8rem; background: var(--noche-2); color: var(--hueso);
+  border: 1px solid var(--noche-3); border-radius: 0; font-size: 16px;
+}
+.mozo__entrada input::placeholder { color: #7A7064; }
+.mozo__entrada input:focus { border-color: var(--rojo-claro); outline: none; }
+.mozo__entrada .btn { flex: none; }
+.mozo__entrada .btn:disabled { opacity: .5; cursor: default; }
+.mozo__nota { margin: 0; padding: 0 1.15rem 1rem; font-size: .78rem; color: var(--hueso-2); }
+.mozo__nota a { color: var(--hueso); text-underline-offset: .25em; }
+.mozo__nota a:hover { color: var(--rojo-claro); }
+.mozo__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 520px) {
+  .mozo__abrir span { font-size: .85rem; }
+  .mozo__panel { width: calc(100vw - 1.6rem); }
+}
 @media (max-width: 420px) {
   .sugerencia__fila { flex-direction: column; gap: .2rem; }
   .sugerencia__fila dt { width: auto; }

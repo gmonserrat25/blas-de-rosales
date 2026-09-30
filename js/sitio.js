@@ -162,15 +162,18 @@ reserva.querySelector('[data-otra]').addEventListener('click', () => { vuelta +=
 const API = /(^|\.)vercel\.app$|^(localhost|127\.0\.0\.1)$/.test(location.hostname)
   ? '/api/recomendar'
   : 'https://blas-de-rosales.vercel.app/api/recomendar';
-const charla = reserva.querySelector('[data-charla]');
-const pregunta = reserva.querySelector('[data-pregunta]');
-const preguntar = reserva.querySelector('[data-preguntar]');
+const mozo = document.querySelector('[data-mozo]');
+const panel = mozo.querySelector('.mozo__panel');
+const abrir = mozo.querySelector('[data-mozo-abrir]');
+const charla = mozo.querySelector('[data-charla]');
+const pregunta = mozo.querySelector('[data-pregunta]');
+const preguntar = mozo.querySelector('[data-preguntar]');
 const historial = [];
 let pensando = false;
 
 function burbuja(quien, texto) {
   const p = document.createElement('p');
-  p.className = `asistente__msg asistente__msg--${quien}`;
+  p.className = `mozo__msg mozo__msg--${quien}`;
   p.textContent = texto;
   charla.append(p);
   charla.scrollTop = charla.scrollHeight;
@@ -186,7 +189,7 @@ async function consultar() {
   historial.push({ role: 'user', content: texto });
   burbuja('cliente', texto);
   const espera = burbuja('mozo', 'Pensando…');
-  espera.classList.add('asistente__msg--espera');
+  espera.classList.add('mozo__msg--espera');
   try {
     const r = await fetch(API, {
       method: 'POST',
@@ -196,24 +199,33 @@ async function consultar() {
     const datos = await r.json().catch(() => ({}));
     if (!r.ok || !datos.respuesta) throw new Error(datos.error || 'sin respuesta');
     historial.push({ role: 'assistant', content: datos.respuesta });
-    espera.classList.remove('asistente__msg--espera');
+    espera.classList.remove('mozo__msg--espera');
     espera.textContent = datos.respuesta;
   } catch (err) {
     historial.pop();
-    espera.classList.remove('asistente__msg--espera');
-    espera.classList.add('asistente__msg--error');
-    espera.textContent = 'No pudimos consultarlo ahora. Probá con las ideas de arriba o preguntale al salón.';
+    espera.classList.remove('mozo__msg--espera');
+    espera.classList.add('mozo__msg--error');
+    espera.textContent = 'No pudimos consultarlo ahora. Probá con las ideas de la reserva o preguntale al salón.';
   }
   pensando = false;
   preguntar.disabled = false;
   charla.scrollTop = charla.scrollHeight;
 }
 
-preguntar.addEventListener('click', consultar);
-// Enter en el campo no debe enviar la reserva por WhatsApp
-pregunta.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') { e.preventDefault(); consultar(); }
-});
+mozo.querySelector('[data-mozo-form]').addEventListener('submit', (e) => { e.preventDefault(); consultar(); });
+
+// La pestaña flotante abre y cierra el chat; Escape también lo cierra
+function alternarMozo(abierto) {
+  panel.hidden = !abierto;
+  abrir.setAttribute('aria-expanded', String(abierto));
+  mozo.classList.toggle('is-abierto', abierto);
+  if (abierto) { pregunta.focus({ preventScroll: true }); charla.scrollTop = charla.scrollHeight; } else abrir.focus({ preventScroll: true });
+}
+abrir.addEventListener('click', () => alternarMozo(panel.hidden));
+mozo.querySelectorAll('[data-mozo-cerrar]').forEach((el) => el.addEventListener('click', () => {
+  if (!panel.hidden) { panel.hidden = true; abrir.setAttribute('aria-expanded', 'false'); mozo.classList.remove('is-abierto'); }
+}));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) alternarMozo(false); });
 
 const enLista = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} y ${xs.at(-1)}` : xs[0]);
 
