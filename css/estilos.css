@@ -343,4 +343,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
   display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .78rem; color: var(--hueso-2);
 }
 
+.pie__credito { margin: 1.1rem 0 0; text-align: center; font-size: 10px; letter-spacing: .08em; color: rgba(169, 159, 144, .5); }
+.pie .pie__credito a { color: inherit; border-bottom: 0; text-decoration: none; transition: color .2s; }
+.pie .pie__credito a:hover { color: var(--hueso-2); }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
